@@ -1,15 +1,15 @@
-import { NextResponse } from "next";
+import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
 import crypto from "crypto";
 
-// Initialize Razorpay instance
-const instance = new Razorpay({
-  key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "",
-  key_secret: process.env.RAZORPAY_KEY_SECRET || "",
-});
-
 export async function POST(req: Request) {
   try {
+    // Initialize Razorpay instance inside to prevent build errors when env vars are missing
+    const instance = new Razorpay({
+      key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "dummy_key",
+      key_secret: process.env.RAZORPAY_KEY_SECRET || "dummy_secret",
+    });
+
     const body = await req.json();
     
     // Create an order
