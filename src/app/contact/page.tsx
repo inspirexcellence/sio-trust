@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Headphones, Users, Building, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,103 +9,137 @@ import { Label } from "@/components/ui/label";
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-slate-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Contact Us</h1>
-          <p className="text-lg text-slate-600">
-            Have questions or want to learn more about our programs? We'd love to hear from you. Get in touch with our team today.
+    <div className="pt-32 pb-24 min-h-screen bg-white">
+      <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
+        
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#101c29] mb-6">Get in Touch</h1>
+          <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Whether you want to volunteer, partner with us, or seek assistance, our doors are always open.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
-          <div className="lg:col-span-1 flex flex-col gap-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100"
-            >
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                <MapPin size={24} />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          {/* Info Cards - Left Column */}
+          <div className="lg:col-span-4 flex flex-col gap-6">
+            
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+              <div className="flex items-start gap-4">
+                <MapPin className="text-primary mt-1" size={20} />
+                <div>
+                  <h3 className="font-bold text-[#101c29] text-base mb-3">Headquarters</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    1450 Social Work Ave<br/>
+                    Valley District, State 12345<br/>
+                    United States
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Our Location</h3>
-              <p className="text-slate-600">123 Charity Lane, Hope City, HC 10001, United States</p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100"
-            >
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                <Phone size={24} />
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+              <div className="flex items-start gap-4">
+                <Headphones className="text-primary mt-1" size={20} />
+                <div>
+                  <h3 className="font-bold text-[#101c29] text-base mb-4">Help Desks</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex flex-col">
+                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">General Inquiries:</span>
+                      <span className="text-slate-600">(555) 987-6543</span>
+                    </li>
+                    <li className="flex flex-col">
+                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">Volunteer Desk:</span>
+                      <span className="text-slate-600">(555) 987-6544</span>
+                    </li>
+                    <li className="flex flex-col">
+                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">CSR Partnerships:</span>
+                      <span className="text-slate-600">(555) 987-6545</span>
+                    </li>
+                    <li className="flex flex-col">
+                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">Emergency Relief:</span>
+                      <span className="text-slate-600">(555) 987-9999</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Phone Number</h3>
-              <p className="text-slate-600">+1 (555) 123-4567<br/>+1 (555) 987-6543</p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100"
-            >
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
-                <Mail size={24} />
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+              <div className="flex items-start gap-4">
+                <Mail className="text-primary mt-1" size={20} />
+                <div>
+                  <h3 className="font-bold text-[#101c29] text-base mb-3">Email</h3>
+                  <p className="text-sm text-primary font-medium hover:underline cursor-pointer mb-1">contact@valleyempowerment.org</p>
+                  <p className="text-sm text-primary font-medium hover:underline cursor-pointer">volunteer@valleyempowerment.org</p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Email Address</h3>
-              <p className="text-slate-600">contact@siotrust.org<br/>support@siotrust.org</p>
-            </motion.div>
+            </div>
+
+            <div className="bg-[#101c29] p-8 rounded-xl shadow-lg text-white">
+              <div className="flex items-start gap-4">
+                <Clock className="text-primary mt-1" size={20} />
+                <div>
+                  <h3 className="font-bold text-base mb-4">Office Hours</h3>
+                  <p className="text-sm text-slate-300 mb-6">
+                    Monday - Saturday<br/>
+                    9:00 AM - 6:00 PM
+                  </p>
+                  <p className="text-xs text-slate-400 italic leading-relaxed">
+                    Field offices remain open on weekends for ongoing projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100"
-            >
-              <h2 className="text-3xl font-bold text-slate-900 mb-8">Send Us A Message</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" className="h-12" />
+          {/* Form - Right Column */}
+          <div className="lg:col-span-8">
+            <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-slate-100 h-full">
+              <h2 className="text-2xl font-serif font-bold text-[#101c29] mb-4">Send us a Message</h2>
+              <p className="text-sm text-slate-500 mb-10 leading-relaxed">
+                Fill out the form below. Whether it's a donation query, a volunteering request, or an SOS, we will respond promptly.
+              </p>
+
+              <form className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <Label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-slate-700">Full Name</Label>
+                    <Input id="fullName" placeholder="Enter your name" className="h-12 border-slate-200 focus:ring-primary" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" className="h-12" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" className="h-12" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12" />
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-700">Email Address</Label>
+                    <Input id="email" type="email" placeholder="Enter your email" className="h-12 border-slate-200 focus:ring-primary" />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="How can we help you?" className="h-12" />
+                
+                <div className="space-y-3">
+                  <Label htmlFor="inquiry" className="text-xs font-bold uppercase tracking-wider text-slate-700">Nature of Inquiry</Label>
+                  <select id="inquiry" className="w-full h-12 border border-slate-200 rounded-md px-4 text-sm text-slate-700 focus:outline-none focus:ring-1 focus:ring-primary">
+                    <option>General Information</option>
+                    <option>Volunteering Opportunities</option>
+                    <option>Donation Inquiry</option>
+                    <option>Corporate Partnership</option>
+                    <option>Other</option>
+                  </select>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Write your message here..." className="min-h-[150px] resize-none" />
+
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-slate-700">Message</Label>
+                  <Textarea id="message" placeholder="How can we help you?" className="min-h-[180px] border-slate-200 focus:ring-primary resize-none" />
                 </div>
-                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white h-14 text-lg shadow-lg shadow-primary/20">
-                  Send Message
+
+                <Button className="bg-[#101c29] hover:bg-[#1a2e42] text-white font-bold px-10 h-14 rounded-lg shadow-lg">
+                  Submit Inquiry
                 </Button>
               </form>
-            </motion.div>
+            </div>
           </div>
+
         </div>
+
       </div>
     </div>
   );

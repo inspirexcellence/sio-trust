@@ -1,21 +1,25 @@
 import HeroSection from "@/components/hero/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import ProgramsSection from "@/components/sections/ProgramsSection";
-import GallerySection from "@/components/sections/GallerySection";
-import EventsSection from "@/components/sections/EventsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import CallToActionSection from "@/components/sections/CallToActionSection";
+import WelcomeSection from "@/components/sections/WelcomeSection";
+import MissionVisionSection from "@/components/sections/MissionVisionSection";
+import HistorySection from "@/components/sections/HistorySection";
+import NetworkSection from "@/components/sections/NetworkSection";
+import StatsBar from "@/components/sections/StatsBar";
+import EventsListSection from "@/components/sections/EventsListSection";
+import InitiativesSection from "@/components/sections/InitiativesSection";
+import VoicesSection from "@/components/sections/VoicesSection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
-      <ProgramsSection />
-      <GallerySection />
-      <EventsSection />
-      <TestimonialsSection />
-      <CallToActionSection />
+      <WelcomeSection />
+      <MissionVisionSection />
+      <HistorySection />
+      <NetworkSection />
+      <StatsBar />
+      <EventsListSection />
+      <InitiativesSection />
+      <VoicesSection />
     </>
   );
 }
