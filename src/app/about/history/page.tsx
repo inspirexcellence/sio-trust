@@ -50,7 +50,7 @@ export default function HistoryPage() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center mb-20"
         >
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#101c29] mb-6">Our Journey of Impact</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#0a2540] mb-6">Our Journey of Impact</h1>
           <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
             From a small grassroots initiative to a recognized force for social good, our history is defined by community resilience.
           </p>
@@ -110,7 +110,7 @@ export default function HistoryPage() {
               <div className="w-full md:w-1/2 px-10 mb-8 md:mb-0">
                 <div className={`flex flex-col ${idx % 2 === 0 ? "md:items-start" : "md:items-end text-right"}`}>
                   <span className="text-4xl font-bold text-primary mb-3">{item.year}</span>
-                  <h3 className="text-xl font-bold text-[#101c29] mb-3">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0a2540] mb-3">{item.title}</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
                     {item.text}
                   </p>

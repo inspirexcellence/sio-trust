@@ -24,20 +24,20 @@ export default function EventsListSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6 md:px-10 max-w-4xl text-center">
         
-        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#101c29] mb-12">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2540] mb-12">
           Upcoming Events
         </h2>
 
         <div className="flex flex-col gap-6 text-left mb-10">
           {events.map((event, idx) => (
             <div key={idx} className="border-b border-slate-100 pb-6 last:border-0 last:pb-0">
-              <h3 className="font-bold text-[#101c29] text-base mb-2">{event.title}</h3>
+              <h3 className="font-bold text-[#0a2540] text-base mb-2">{event.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed">{event.desc}</p>
             </div>
           ))}
         </div>
 
-        <Link href="/events" className="text-primary font-semibold text-sm hover:underline uppercase tracking-wider">
+        <Link href="/events" className="text-[#0a2540] hover:text-[#f6b92a] font-semibold text-sm underline uppercase tracking-wider">
           View All Events
         </Link>
       </div>

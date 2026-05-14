@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#101c29]/95 backdrop-blur-md shadow-md py-2" : "bg-[#101c29] py-4"
+        scrolled ? "bg-[#0a2540]/95 backdrop-blur-md shadow-md py-2" : "bg-[#0a2540] py-4"
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg md:text-xl font-bold text-white tracking-wide font-serif leading-none mb-1">
-              Valley Empowerment
+              SIO
             </span>
             <span className="text-[9px] md:text-[10px] text-slate-400 tracking-[0.15em] font-medium uppercase leading-none">
               Charitable Trust
@@ -49,7 +49,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-10">
             <li>
               <Link
                 href="/"
@@ -64,9 +64,9 @@ export default function Navbar() {
               </span>
               <div className="absolute top-full left-0 pt-4 hidden group-hover:block w-48">
                 <div className="bg-white rounded-lg shadow-lg py-2 flex flex-col">
-                  <Link href="/about/history" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our Journey</Link>
-                  <Link href="/about/trustees" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Board of Trustees</Link>
-                  <Link href="/about/team" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Executive Team</Link>
+                  <Link href="/about/history" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our History</Link>
+                  <Link href="/about/trustees" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our Trustees</Link>
+                  <Link href="/about/team" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our Team</Link>
                 </div>
               </div>
             </li>
@@ -88,7 +88,7 @@ export default function Navbar() {
             </li>
           </ul>
           <Link href="/donate">
-            <Button className="bg-primary hover:bg-[#e5a924] text-[#101c29] font-bold rounded-full px-6 h-10 text-sm">
+            <Button className="bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold rounded-full px-6 h-10 text-sm">
               Donate
             </Button>
           </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#101c29] border-t border-slate-800"
+            className="md:hidden bg-[#0a2540] border-t border-slate-800"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <ul className="flex flex-col gap-4">
@@ -139,7 +139,7 @@ export default function Navbar() {
               </ul>
               <div className="pt-4 border-t border-slate-800">
                 <Link href="/donate" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full justify-center bg-primary text-[#101c29] font-bold rounded-full py-6 text-lg">
+                  <Button className="w-full justify-center bg-primary text-[#0a2540] font-bold rounded-full py-6 text-lg">
                     Donate
                   </Button>
                 </Link>

@@ -9,7 +9,7 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="py-12 bg-[#101c29] text-white">
+    <section className="py-12 bg-[#0a2540] text-white">
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-700/50">
           {stats.map((stat, idx) => (

@@ -4,7 +4,7 @@ export default function HistorySection() {
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
         
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold text-[#101c29] mb-4">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold text-[#0a2540] mb-4">
             Our History
           </h2>
           <p className="text-sm md:text-base text-slate-600 mb-10 italic">

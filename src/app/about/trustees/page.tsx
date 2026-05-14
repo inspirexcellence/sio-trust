@@ -30,7 +30,7 @@ export default function TrusteesPage() {
         
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#101c29] mb-6">Board of Trustees</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#0a2540] mb-6">Board of Trustees</h1>
           <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Guided by visionaries, philanthropists, and seasoned social advocates committed to transparent governance and sustainable impact.
           </p>
@@ -55,7 +55,7 @@ export default function TrusteesPage() {
                 />
               </div>
               <div className="p-8 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-[#101c29] mb-1">{trustee.name}</h3>
+                <h3 className="text-xl font-bold text-[#0a2540] mb-1">{trustee.name}</h3>
                 <p className="text-xs font-bold text-primary uppercase tracking-widest mb-6">{trustee.role}</p>
                 <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
                   {trustee.bio}

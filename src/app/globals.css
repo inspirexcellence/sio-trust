@@ -56,13 +56,13 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #f6b92a; /* Yellow */
-  --primary-foreground: #0f1c29; /* Dark Navy for text on primary */
-  --secondary: #0f1c29; /* Dark Navy */
+  --primary-foreground: #0a2540; /* Dark Navy for text on primary */
+  --secondary: #0a2540; /* Dark Navy */
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
-  --accent-foreground: #0f1c29;
+  --accent-foreground: #0a2540;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -84,14 +84,14 @@
 }
 
 .dark {
-  --background: #0f1c29; /* Dark Navy */
+  --background: #0a2540; /* Dark Navy */
   --foreground: oklch(0.985 0 0);
   --card: #152739;
   --card-foreground: oklch(0.985 0 0);
   --popover: #152739;
   --popover-foreground: oklch(0.985 0 0);
   --primary: #f6b92a; /* Lighter blue for dark mode */
-  --primary-foreground: #0f1c29;
+  --primary-foreground: #0a2540;
   --secondary: #1e3348;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: #1e3348;

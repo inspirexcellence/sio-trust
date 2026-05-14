@@ -37,7 +37,7 @@ export default function TeamPage() {
         
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#101c29] mb-6">Our Executive Team</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#0a2540] mb-6">Our Executive Team</h1>
           <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
             The dedicated program directors and field managers who turn our organizational vision into tangible, on-the-ground reality.
           </p>
@@ -53,7 +53,7 @@ export default function TeamPage() {
             />
           </div>
           <div className="lg:w-3/5 p-10 md:p-16 flex flex-col justify-center">
-            <h2 className="text-3xl font-serif font-bold text-[#101c29] mb-1">Dr. Sarah Jenkins</h2>
+            <h2 className="text-3xl font-serif font-bold text-[#0a2540] mb-1">Dr. Sarah Jenkins</h2>
             <p className="text-xs font-bold text-primary uppercase tracking-widest mb-8">MANAGING TRUSTEE / EXECUTIVE DIRECTOR</p>
             
             <div className="text-sm md:text-base text-slate-600 space-y-6 leading-relaxed mb-10">
@@ -65,7 +65,7 @@ export default function TeamPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 text-sm font-bold text-[#101c29]">
+            <div className="flex items-center gap-3 text-sm font-bold text-[#0a2540]">
               <Mail size={18} className="text-primary" />
               <span>director@valleyempowerment.org</span>
             </div>
@@ -74,7 +74,7 @@ export default function TeamPage() {
 
         {/* Program Directors Section */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-serif font-bold text-[#101c29] mb-4">Program Directors</h2>
+          <h2 className="text-2xl font-serif font-bold text-[#0a2540] mb-4">Program Directors</h2>
           <div className="w-20 h-1 bg-primary mx-auto" />
         </div>
 
@@ -84,7 +84,7 @@ export default function TeamPage() {
               <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-50">
                 <img src={director.image} alt={director.name} className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-bold text-[#101c29] text-base mb-1">{director.name}</h3>
+              <h3 className="font-bold text-[#0a2540] text-base mb-1">{director.name}</h3>
               <p className="text-[11px] font-bold text-primary uppercase tracking-wider mb-6 leading-tight">{director.role}</p>
               <p className="text-xs text-slate-500 leading-relaxed">
                 {director.bio}

@@ -23,7 +23,7 @@ export default function InitiativesSection() {
     <section className="py-20 bg-slate-50 border-t border-slate-100">
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px] text-center">
         
-        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#101c29] mb-16">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2540] mb-16">
           Featured Initiatives
         </h2>
 
@@ -33,7 +33,7 @@ export default function InitiativesSection() {
               <div className="text-primary mb-4">
                 {item.icon}
               </div>
-              <h3 className="font-bold text-[#101c29] text-base mb-3 capitalize tracking-wide">{item.title}</h3>
+              <h3 className="font-bold text-[#0a2540] text-base mb-3 capitalize tracking-wide">{item.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
                 {item.desc}
               </p>

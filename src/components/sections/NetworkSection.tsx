@@ -16,7 +16,7 @@ export default function NetworkSection() {
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
         
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-serif font-bold text-[#101c29] mb-4">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold text-[#0a2540] mb-4">
             Network of Schools & Centres
           </h2>
           <p className="text-sm text-slate-500 uppercase tracking-wider font-semibold">
@@ -30,13 +30,13 @@ export default function NetworkSection() {
               <div className="h-48 bg-slate-200 relative overflow-hidden">
                 {/* Placeholder for center image */}
                 <img 
-                  src={`https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop`} 
+                  src={`https://media.istockphoto.com/id/174789151/photo/school-building-uk-infant-junior-5-11years.jpg?s=612x612&w=0&k=20&c=en44a_O0TEUS0IRawQx_fz5_hCXWS63Mec9O-7COQXY=`} 
                   alt={center.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale opacity-80"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-bold text-[#101c29] mb-2 tracking-wide uppercase text-sm">{center.title}</h3>
+                <h3 className="font-bold text-[#0a2540] mb-2 tracking-wide uppercase text-sm">{center.title}</h3>
                 <p className="text-xs text-slate-600 mb-4 flex-grow">{center.desc}</p>
                 <div className="text-[10px] text-slate-400 uppercase font-semibold tracking-wider">
                   Location: {center.location}
@@ -46,7 +46,7 @@ export default function NetworkSection() {
           ))}
         </div>
 
-        <div className="text-center font-bold text-[#101c29] text-sm md:text-base flex flex-wrap justify-center items-center gap-2 md:gap-4">
+        <div className="text-center font-bold text-[#0a2540] text-sm md:text-base flex flex-wrap justify-center items-center gap-2 md:gap-4">
           <span>School Strength <span className="text-primary">4,500+</span></span>
           <span className="text-slate-300 hidden md:inline">|</span>
           <span>Staff <span className="text-primary">500+</span></span>

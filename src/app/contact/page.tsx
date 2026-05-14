@@ -14,7 +14,7 @@ export default function ContactPage() {
         
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#101c29] mb-6">Get in Touch</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#0a2540] mb-6">Get in Touch</h1>
           <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Whether you want to volunteer, partner with us, or seek assistance, our doors are always open.
           </p>
@@ -29,7 +29,7 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <MapPin className="text-primary mt-1" size={20} />
                 <div>
-                  <h3 className="font-bold text-[#101c29] text-base mb-3">Headquarters</h3>
+                  <h3 className="font-bold text-[#0a2540] text-base mb-3">Headquarters</h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
                     1450 Social Work Ave<br/>
                     Valley District, State 12345<br/>
@@ -43,22 +43,22 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <Headphones className="text-primary mt-1" size={20} />
                 <div>
-                  <h3 className="font-bold text-[#101c29] text-base mb-4">Help Desks</h3>
+                  <h3 className="font-bold text-[#0a2540] text-base mb-4">Help Desks</h3>
                   <ul className="space-y-3 text-sm">
                     <li className="flex flex-col">
-                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">General Inquiries:</span>
+                      <span className="font-bold text-[#0a2540] text-xs uppercase tracking-wider">General Inquiries:</span>
                       <span className="text-slate-600">(555) 987-6543</span>
                     </li>
                     <li className="flex flex-col">
-                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">Volunteer Desk:</span>
+                      <span className="font-bold text-[#0a2540] text-xs uppercase tracking-wider">Volunteer Desk:</span>
                       <span className="text-slate-600">(555) 987-6544</span>
                     </li>
                     <li className="flex flex-col">
-                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">CSR Partnerships:</span>
+                      <span className="font-bold text-[#0a2540] text-xs uppercase tracking-wider">CSR Partnerships:</span>
                       <span className="text-slate-600">(555) 987-6545</span>
                     </li>
                     <li className="flex flex-col">
-                      <span className="font-bold text-[#101c29] text-xs uppercase tracking-wider">Emergency Relief:</span>
+                      <span className="font-bold text-[#0a2540] text-xs uppercase tracking-wider">Emergency Relief:</span>
                       <span className="text-slate-600">(555) 987-9999</span>
                     </li>
                   </ul>
@@ -70,14 +70,14 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <Mail className="text-primary mt-1" size={20} />
                 <div>
-                  <h3 className="font-bold text-[#101c29] text-base mb-3">Email</h3>
+                  <h3 className="font-bold text-[#0a2540] text-base mb-3">Email</h3>
                   <p className="text-sm text-primary font-medium hover:underline cursor-pointer mb-1">contact@valleyempowerment.org</p>
                   <p className="text-sm text-primary font-medium hover:underline cursor-pointer">volunteer@valleyempowerment.org</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#101c29] p-8 rounded-xl shadow-lg text-white">
+            <div className="bg-[#0a2540] p-8 rounded-xl shadow-lg text-white">
               <div className="flex items-start gap-4">
                 <Clock className="text-primary mt-1" size={20} />
                 <div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
           {/* Form - Right Column */}
           <div className="lg:col-span-8">
             <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-slate-100 h-full">
-              <h2 className="text-2xl font-serif font-bold text-[#101c29] mb-4">Send us a Message</h2>
+              <h2 className="text-2xl font-serif font-bold text-[#0a2540] mb-4">Send us a Message</h2>
               <p className="text-sm text-slate-500 mb-10 leading-relaxed">
                 Fill out the form below. Whether it's a donation query, a volunteering request, or an SOS, we will respond promptly.
               </p>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                   <Textarea id="message" placeholder="How can we help you?" className="min-h-[180px] border-slate-200 focus:ring-primary resize-none" />
                 </div>
 
-                <Button className="bg-[#101c29] hover:bg-[#1a2e42] text-white font-bold px-10 h-14 rounded-lg shadow-lg">
+                <Button className="bg-[#0a2540] hover:bg-[#1a2e42] text-white font-bold px-10 h-14 rounded-lg shadow-lg">
                   Submit Inquiry
                 </Button>
               </form>

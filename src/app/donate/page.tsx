@@ -27,7 +27,7 @@ export default function DonatePage() {
     <div className="pt-24 min-h-screen bg-slate-50">
       
       {/* Hero Header */}
-      <section className="relative py-20 bg-[#101c29] text-white text-center overflow-hidden">
+      <section className="relative py-20 bg-[#0a2540] text-white text-center overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
@@ -56,7 +56,7 @@ export default function DonatePage() {
           {/* Left Side: Why Donate */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <h2 className="text-2xl font-serif font-bold text-[#101c29] mb-6 flex items-center gap-3">
+              <h2 className="text-2xl font-serif font-bold text-[#0a2540] mb-6 flex items-center gap-3">
                 <Heart className="text-primary" fill="currentColor" /> Why Donate?
               </h2>
               <div className="space-y-6">
@@ -65,7 +65,7 @@ export default function DonatePage() {
                     <Zap className="text-primary w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#101c29] text-sm mb-1">Direct Impact</h4>
+                    <h4 className="font-bold text-[#0a2540] text-sm mb-1">Direct Impact</h4>
                     <p className="text-xs text-slate-500 leading-relaxed">100% of your donation goes directly to field programs and beneficiary support.</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function DonatePage() {
                     <ShieldCheck className="text-primary w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#101c29] text-sm mb-1">Secure Payments</h4>
+                    <h4 className="font-bold text-[#0a2540] text-sm mb-1">Secure Payments</h4>
                     <p className="text-xs text-slate-500 leading-relaxed">Transactions are encrypted and processed through industry-leading payment gateways.</p>
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function DonatePage() {
                     <Globe className="text-primary w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#101c29] text-sm mb-1">Transparent Reporting</h4>
+                    <h4 className="font-bold text-[#0a2540] text-sm mb-1">Transparent Reporting</h4>
                     <p className="text-xs text-slate-500 leading-relaxed">Receive regular updates and annual reports on how your contribution is used.</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default function DonatePage() {
             </div>
 
             <div className="bg-primary/5 p-8 rounded-2xl border border-primary/20">
-              <p className="text-sm text-[#101c29] leading-relaxed font-medium italic">
+              <p className="text-sm text-[#0a2540] leading-relaxed font-medium italic">
                 "We make a living by what we get, but we make a life by what we give."
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function DonatePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-100"
             >
-              <h3 className="text-2xl font-serif font-bold text-[#101c29] mb-8">Choose Donation Amount</h3>
+              <h3 className="text-2xl font-serif font-bold text-[#0a2540] mb-8">Choose Donation Amount</h3>
               
               <div className="space-y-8">
                 {/* Preset Amounts */}
@@ -145,7 +145,7 @@ export default function DonatePage() {
 
                 {/* Personal Details */}
                 <div className="space-y-6">
-                  <h4 className="font-bold text-[#101c29] text-base mb-4">Donor Information</h4>
+                  <h4 className="font-bold text-[#0a2540] text-base mb-4">Donor Information</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase">Full Name</Label>
@@ -162,7 +162,7 @@ export default function DonatePage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-primary hover:bg-[#e5a924] text-[#101c29] font-bold py-8 text-xl rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]">
+                <Button className="w-full bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold py-8 text-xl rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]">
                   Donate ₹{amount || "0"} Now
                 </Button>
 
