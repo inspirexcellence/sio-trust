@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-lg md:text-xl font-bold text-white tracking-wide font-serif leading-none mb-1">
-              SIO
+              South Indians' Organisation
             </span>
             <span className="text-[9px] md:text-[10px] text-slate-400 tracking-[0.15em] font-medium uppercase leading-none">
               Charitable Trust

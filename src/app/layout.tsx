@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://siotrust.org"),
   title: "SIO Trust | Empowering Communities, Transforming Lives",
   description: "SIO Trust is a non-profit organization dedicated to community development, education, and social welfare. Join us in making a difference.",
   keywords: ["NGO", "Trust", "Charity", "Donation", "Community", "SIO Trust", "Education", "Welfare"],

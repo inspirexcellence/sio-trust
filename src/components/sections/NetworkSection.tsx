@@ -1,14 +1,11 @@
 export default function NetworkSection() {
   const centers = [
-    { title: "VEDA KENDRA", desc: "A holistic learning center focusing on foundational education and values.", location: "Hope City" },
-    { title: "VIDYA", desc: "Our flagship school providing quality education to marginalized communities.", location: "Rural District" },
-    { title: "PATHSHALA", desc: "Evening classes for children who work during the day to support their families.", location: "Urban Slums" },
-    { title: "GURUKUL", desc: "A residential educational facility providing comprehensive development.", location: "Valley Region" },
-    { title: "SHIKSHA", desc: "A bridging program to integrate dropouts back into the formal education system.", location: "North District" },
-    { title: "MAHILA SILAI KENDRA", desc: "A vocational training center empowering women with tailoring skills.", location: "East Zone" },
-    { title: "COMPUTER TRAINING", desc: "Equipping youth with digital literacy and basic computer skills for better employment.", location: "City Center" },
-    { title: "KAUSHAL VIKAS", desc: "Skill development center focusing on various trades like carpentry, plumbing, etc.", location: "Industrial Hub" },
-    { title: "ASHA", desc: "A special education center for children with diverse learning needs.", location: "West District" },
+    { title: "VANI VIDYALAYA PRE-PRIMARY", desc: "Nurturing the youngest minds with a strong foundation in values and early learning.", location: "Mulund West" },
+    { title: "VANI VIDYALAYA PRIMARY", desc: "Fostering academic excellence and character building during the formative years.", location: "Mulund West" },
+    { title: "VANI VIDYALAYA SECONDARY", desc: "Empowering students with advanced knowledge, leadership skills, and discipline.", location: "Mulund West" },
+    { title: "VANI JUNIOR COLLEGE", desc: "Preparing future leaders for global success in Science and Commerce streams.", location: "Mulund West" },
+    { title: "ROBOTICS & AI LAB", desc: "A state-of-the-art facility for future-ready education and technological innovation.", location: "Main Campus" },
+    { title: "SPORTS & WELLNESS UNIT", desc: "Focusing on physical development and holistic well-being for every student.", location: "Main Campus" },
   ];
 
   return (
@@ -47,13 +44,13 @@ export default function NetworkSection() {
         </div>
 
         <div className="text-center font-bold text-[#0a2540] text-sm md:text-base flex flex-wrap justify-center items-center gap-2 md:gap-4">
-          <span>School Strength <span className="text-primary">4,500+</span></span>
+          <span>School Strength <span className="text-primary">3,600+</span></span>
           <span className="text-slate-300 hidden md:inline">|</span>
-          <span>Staff <span className="text-primary">500+</span></span>
+          <span>Staff <span className="text-primary">125+</span></span>
           <span className="text-slate-300 hidden md:inline">|</span>
-          <span>Operation Areas <span className="text-primary">250+</span></span>
+          <span>Legacy <span className="text-primary">70 Years</span></span>
           <span className="text-slate-300 hidden md:inline">|</span>
-          <span>VET Centres <span className="text-primary">10+</span></span>
+          <span>Establishment <span className="text-primary">1955</span></span>
         </div>
 
       </div>

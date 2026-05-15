@@ -4,18 +4,18 @@ export default function InitiativesSection() {
   const initiatives = [
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "education scholarships",
-      desc: "Providing financial support to deserving students to continue their higher education without barriers."
-    },
-    {
-      icon: <HeartPulse className="w-8 h-8" />,
-      title: "medical welfare",
-      desc: "Offering free healthcare services, surgeries, and medicines to patients from low-income families."
+      title: "Education Beyond Academics",
+      desc: "We believe true education goes beyond textbooks; it nurtures character, discipline, creativity, and leadership while preparing students to contribute meaningfully to society."
     },
     {
       icon: <ShieldCheck className="w-8 h-8" />,
-      title: "community empowerment",
-      desc: "Conducting awareness programs and skill development courses to uplift the community as a whole."
+      title: "Rooted in Values, Driven by Excellence",
+      desc: "For over seven decades, SIO has combined academic rigor with strong ethical values, cultural grounding, and holistic development to shape responsible future leaders."
+    },
+    {
+      icon: <HeartPulse className="w-8 h-8" />,
+      title: "Committed to Every Student’s Growth",
+      desc: "From foundational learning to future-ready education, we are dedicated to creating an environment where every student is empowered to learn, grow, innovate, and succeed."
     }
   ];
 

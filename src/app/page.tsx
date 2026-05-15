@@ -6,6 +6,7 @@ import NetworkSection from "@/components/sections/NetworkSection";
 import StatsBar from "@/components/sections/StatsBar";
 import EventsListSection from "@/components/sections/EventsListSection";
 import InitiativesSection from "@/components/sections/InitiativesSection";
+import QuoteSection from "@/components/sections/QuoteSection";
 import VoicesSection from "@/components/sections/VoicesSection";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <HeroSection />
       <WelcomeSection />
+      <QuoteSection />
       <MissionVisionSection />
       <HistorySection />
       <NetworkSection />

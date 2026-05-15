@@ -13,16 +13,16 @@ export default function MissionVisionSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="text-center px-4">
+          <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-md">
             <h3 className="text-xl font-serif font-bold text-[#0a2540] mb-4">Our Mission</h3>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
-              To empower marginalized communities by providing access to quality education, healthcare, and sustainable livelihood opportunities, fostering self-reliance and social inclusion.
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+              “To cultivate a transformative educational environment that fosters intellectual curiosity, ethical leadership, and social responsibility, preparing students to excel in a rapidly evolving global society.”
             </p>
           </div>
-          <div className="text-center px-4">
+          <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-md">
             <h3 className="text-xl font-serif font-bold text-[#0a2540] mb-4">Our Vision</h3>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
-              A world where every individual, regardless of their socio-economic background, has the opportunity to achieve their full potential and contribute meaningfully to society.
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+              “To be a premier destination for Professional and Liberal Arts, where a multi-generational legacy of integrity meets the future of global leadership.”
             </p>
           </div>
         </div>

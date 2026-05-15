@@ -58,7 +58,7 @@ export default function TeamPage() {
             
             <div className="text-sm md:text-base text-slate-600 space-y-6 leading-relaxed mb-10">
               <p>
-                Dr. Jenkins took the helm of VET in 2018. Holding a Master's in Social Work and a Ph.D. in Public Policy, she has spent her career advocating for educational reform in marginalized zones. Under her operational leadership, the Trust has expanded its footprint to three new districts and quadrupled its annual volunteer base.
+                Dr. Jenkins took the helm of SIO in 2018. Holding a Master's in Social Work and a Ph.D. in Public Policy, she has spent her career advocating for educational reform in marginalized zones. Under her operational leadership, the Trust has expanded its footprint to three new districts and quadrupled its annual volunteer base.
               </p>
               <p className="italic border-l-4 border-primary pl-6 py-1">
                 "Charity is the response to immediate crisis, but empowerment is the systematic dismantling of the barriers that caused the crisis. We don't just want to hand out relief; we want to hand out opportunity."

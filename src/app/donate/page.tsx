@@ -8,10 +8,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function DonatePage() {
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [amount, setAmount] = useState<string>("1000");
   const [customAmount, setCustomAmount] = useState<string>("");
 
   const presets = ["500", "1000", "5000", "10000"];
+
+  const handleDonate = () => {
+    // In a real scenario, this would be called after Razorpay success callback
+    setIsSuccess(true);
+    // Scroll to top of form
+    window.scrollTo({ top: 400, behavior: 'smooth' });
+    // Hide message after 15 seconds
+    setTimeout(() => setIsSuccess(false), 15000);
+  };
 
   const handlePresetClick = (val: string) => {
     setAmount(val);
@@ -162,9 +172,30 @@ export default function DonatePage() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold py-8 text-xl rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]">
-                  Donate ₹{amount || "0"} Now
-                </Button>
+                <div className="space-y-4">
+                  <Button 
+                    onClick={handleDonate}
+                    className="w-full bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold py-8 text-xl rounded-xl shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Donate ₹{amount || "0"} Now
+                  </Button>
+
+                  {isSuccess && (
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="p-6 bg-emerald-50 border border-emerald-100 rounded-xl text-center"
+                    >
+                      <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <ShieldCheck className="text-white" size={24} />
+                      </div>
+                      <h4 className="text-emerald-900 font-bold text-lg mb-2">Thank you for your generosity!</h4>
+                      <p className="text-emerald-700 text-sm">
+                        Your donation of ₹{amount} has been received successfully. A receipt has been sent to your email.
+                      </p>
+                    </motion.div>
+                  )}
+                </div>
 
                 <p className="text-[10px] text-slate-400 text-center uppercase tracking-widest font-medium">
                   Secure Payment Powered by Razorpay

@@ -8,7 +8,7 @@ export default function TrusteesPage() {
       name: "Marcus Vance",
       role: "CHAIRMAN & CO-FOUNDER",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop",
-      bio: "A retired corporate executive turned full-time philanthropist. Marcus brings over 30 years of management experience to VET, establishing our transparent audit protocols and driving our major endowment campaigns."
+      bio: "A retired corporate executive turned full-time philanthropist. Marcus brings over 30 years of management experience to SIO, establishing our transparent audit protocols and driving our major endowment campaigns."
     },
     {
       name: "Dr. Elena Rostova",
@@ -39,7 +39,7 @@ export default function TrusteesPage() {
         {/* Intro Text */}
         <div className="max-w-4xl mx-auto text-center mb-24 border-t border-slate-100 pt-16">
           <p className="text-sm md:text-base text-slate-600 leading-relaxed italic">
-            The Board of Trustees acts as the strategic backbone of Valley Empowerment Trust. Comprised of leaders from the corporate, medical, and public sectors, the Board ensures rigorous financial oversight, adherence to our core values, and the strategic expansion of our programs to maximize societal benefit.
+            The Board of Trustees acts as the strategic backbone of South Indians' Organisation. Comprised of leaders from the corporate, medical, and public sectors, the Board ensures rigorous financial oversight, adherence to our core values, and the strategic expansion of our programs to maximize societal benefit.
           </p>
         </div>
 

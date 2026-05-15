@@ -45,12 +45,12 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link href="/donate">
+            <Link href="/about/history">
               <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold rounded-full px-8 py-6 text-base transition-transform hover:scale-105">
                 Explore Our Legacy
               </Button>
             </Link>
-            <Link href="/about">
+            <Link href="/patrons">
               <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0a2540] font-bold rounded-full px-8 py-6 text-base transition-transform hover:scale-105">
                 Our Institution
               </Button>

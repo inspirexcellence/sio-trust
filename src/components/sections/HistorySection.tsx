@@ -13,10 +13,10 @@ export default function HistorySection() {
 
           <div className="text-sm text-slate-700 leading-relaxed space-y-6 text-left">
             <p>
-              Valley Empowerment Trust (VET) began its journey with a simple yet profound vision: to bridge the gap of inequality by providing fundamental rights like education and healthcare to the most deprived sections of society. Over the years, we have grown from a small group of passionate volunteers to a robust organization impacting thousands of lives.
+              Founded in 1955, the South Indians’ Organisation (SIO) was established with a vision to make quality education accessible to communities that were striving for growth and opportunity. What began as a humble initiative with just 27 students in a small classroom evolved into a respected educational institution dedicated to academic excellence, ethical values, and holistic development.
             </p>
             <p>
-              What started as a single educational initiative in a remote village has now blossomed into a widespread network of schools, vocational training centers, and health camps. Our commitment remains unwavering as we continue to expand our reach, ensuring that every child gets to learn, every youth gets skilled, and every family has access to basic healthcare.
+              For over seven decades, SIO has remained committed to nurturing generations of students through value-based learning, cultural grounding, leadership, and future-ready education that shape not just scholars but responsible citizens and empowered leaders for tomorrow.
             </p>
           </div>
         </div>

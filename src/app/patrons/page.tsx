@@ -20,7 +20,7 @@ export default function PatronsPage() {
         {/* Intro Text */}
         <div className="max-w-4xl mx-auto text-center mb-24">
           <p className="text-sm md:text-base text-slate-600 leading-relaxed italic">
-            At Valley Empowerment Trust, we believe in creating synergistic partnerships. Our institutional donors do more than just write checks; they actively participate in shaping programs, offering corporate volunteering, and ensuring robust social returns on investment.
+            At South Indians' Organisation, we believe in creating synergistic partnerships. Our institutional donors do more than just write checks; they actively participate in shaping programs, offering corporate volunteering, and ensuring robust social returns on investment.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function PatronsPage() {
           <p className="text-xs text-slate-400 mb-12">Funding specific healthcare and educational camps</p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {["Valley Tech Solutions", "Oakridge Medical", "National Logistics", "Pioneer Energy"].map((item) => (
+            {["Mumbai Tech Solutions", "Heritage Builders", "National Logistics", "Pioneer Energy"].map((item) => (
               <div key={item} className="bg-slate-50 py-8 px-4 rounded-xl flex items-center justify-center border border-slate-100 text-sm font-serif text-slate-500 font-bold">
                 {item}
               </div>

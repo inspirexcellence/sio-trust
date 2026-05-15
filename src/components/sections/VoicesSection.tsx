@@ -11,19 +11,19 @@ export default function VoicesSection() {
           
           <div className="flex flex-col items-center">
             <p className="text-sm md:text-base text-slate-700 leading-relaxed italic mb-4 max-w-2xl">
-              "Valley Empowerment Trust has completely transformed our village by providing clean drinking water and setting up the local clinic. We no longer have to walk miles every day or worry about basic healthcare. They are like a godsend to our community."
+              "Enrolling my children at Vani Vidyalaya was the best decision for their future. Beyond just academics, the institution has instilled deep cultural values and discipline in them. It's heartening to see an organisation so dedicated to shaping the character of the next generation."
             </p>
             <p className="text-xs font-bold text-[#0a2540] uppercase tracking-wider">
-              — Amina Begum, Village Elder, Hope City
+              — A Proud Parent, Mulund
             </p>
           </div>
 
           <div className="flex flex-col items-center">
             <p className="text-sm md:text-base text-slate-700 leading-relaxed italic mb-4 max-w-2xl">
-              "The educational scholarship provided by VET allowed me to complete my engineering degree despite my family's financial struggles. They not only paid for my fees but also provided me with a mentor. I am now working at a top firm and plan to sponsor another student next year."
+              "The foundation I received at SIO was instrumental in my journey to becoming a successful professional. The blend of modern learning and traditional integrity is what makes this institution unique. Today, as a leader in my field, I carry the lessons of my teachers with me every day."
             </p>
             <p className="text-xs font-bold text-[#0a2540] uppercase tracking-wider">
-              — Rahul Sharma, VET Scholarship Alumnus
+              — SIO Alumnus, Batch of 1998
             </p>
           </div>
 

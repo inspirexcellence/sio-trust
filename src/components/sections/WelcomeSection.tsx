@@ -7,9 +7,6 @@ export default function WelcomeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div className="flex flex-col">
-            <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-bold rounded-full text-[10px] uppercase tracking-widest mb-6">
-              Our Humble Beginnings
-            </div>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0a2540] mb-8 leading-tight">
               From 27 Students to <span className="text-primary italic">Thousands of Futures</span>
             </h2>
