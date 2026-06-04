@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,15 +12,7 @@ export default function Footer() {
           {/* Brand & About */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="text-primary w-8 h-8">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                  <path d="M12 21a9.96 9.96 0 0 0 8.02-4.1" />
-                  <path d="M3.82 9.82A6.17 6.17 0 0 0 2 12c0 3.31 2.69 6 6 6h1" />
-                  <path d="M14 16h-3" />
-                  <path d="M11 19h-2" />
-                </svg>
-              </div>
+              <Image src="/sioLogo.png" alt="Logo" width={44} height={44} />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white tracking-wide font-serif leading-none mb-1">
                   South Indians' Organisation
