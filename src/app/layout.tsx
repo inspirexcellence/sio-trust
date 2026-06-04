@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://siotrust.org"),
   title: "SIO Trust | Empowering Communities, Transforming Lives",
   description: "SIO Trust is a non-profit organization dedicated to community development, education, and social welfare. Join us in making a difference.",
+  icons: {
+    icon: "/sioLogo.png",
+    
+  },
   keywords: ["NGO", "Trust", "Charity", "Donation", "Community", "SIO Trust", "Education", "Welfare"],
   openGraph: {
     title: "SIO Trust | Empowering Communities",
@@ -42,6 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.className} scroll-smooth antialiased`}>
+
       <body className="min-h-screen flex flex-col font-sans bg-background text-foreground">
         <Navbar />
         <main className="flex-grow">{children}</main>
