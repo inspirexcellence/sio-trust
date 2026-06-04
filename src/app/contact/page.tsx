@@ -2,36 +2,58 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Headphones } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Headphones, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema, ContactFormData } from "@/lib/schemas";
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    inquiry: "General Information",
-    message: ""
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      inquiry: "General Information"
+    }
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Construct the mailto link
-    const subject = encodeURIComponent(`SIO Inquiry: ${formData.inquiry} from ${formData.fullName}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.fullName}\nEmail: ${formData.email}\nInquiry Type: ${formData.inquiry}\n\nMessage:\n${formData.message}`
-    );
-    
-    window.location.href = `mailto:contact@siotrust.org?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
-    // Reset form
-    setFormData({ fullName: "", email: "", inquiry: "General Information", message: "" });
-    // Hide message after 10 seconds
-    setTimeout(() => setIsSubmitted(false), 10000);
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setServerError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await res.json();
+      
+      if (result.success) {
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 10000);
+      } else {
+        throw new Error(result.message || "Failed to send message");
+      }
+    } catch (error: any) {
+      console.error("Submission Error:", error);
+      // Fallback: If API fails, we still show the "mailto" link as a backup or just an error
+      setServerError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -125,18 +147,17 @@ export default function ContactPage() {
                 Fill out the form below and our team will get back to you shortly.
               </p>
 
-              <form className="space-y-8" onSubmit={handleSubmit}>
+              <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <Label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider text-slate-700">Full Name</Label>
                     <Input 
                       id="fullName" 
                       placeholder="Enter your name" 
-                      required
-                      className="h-12 border-slate-200 focus:ring-primary" 
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                      className={`h-12 border-slate-200 focus:ring-primary ${errors.fullName ? 'border-red-500' : ''}`} 
+                      {...register("fullName")}
                     />
+                    {errors.fullName && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.fullName.message}</p>}
                   </div>
                   <div className="space-y-3">
                     <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-700">Email Address</Label>
@@ -144,11 +165,10 @@ export default function ContactPage() {
                       id="email" 
                       type="email" 
                       placeholder="Enter your email" 
-                      required
-                      className="h-12 border-slate-200 focus:ring-primary" 
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className={`h-12 border-slate-200 focus:ring-primary ${errors.email ? 'border-red-500' : ''}`} 
+                      {...register("email")}
                     />
+                    {errors.email && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.email.message}</p>}
                   </div>
                 </div>
                 
@@ -157,14 +177,13 @@ export default function ContactPage() {
                   <select 
                     id="inquiry" 
                     className="w-full h-12 border border-slate-200 rounded-md px-4 text-sm text-slate-700 focus:outline-none focus:ring-1 focus:ring-primary"
-                    value={formData.inquiry}
-                    onChange={(e) => setFormData({...formData, inquiry: e.target.value})}
+                    {...register("inquiry")}
                   >
-                    <option>General Information</option>
-                    <option>Admission Inquiry</option>
-                    <option>Donation Inquiry</option>
-                    <option>Alumni Association</option>
-                    <option>Other</option>
+                    <option value="General Information">General Information</option>
+                    <option value="Admission Inquiry">Admission Inquiry</option>
+                    <option value="Donation Inquiry">Donation Inquiry</option>
+                    <option value="Alumni Association">Alumni Association</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
@@ -173,16 +192,20 @@ export default function ContactPage() {
                   <Textarea 
                     id="message" 
                     placeholder="How can we help you?" 
-                    required
-                    className="min-h-[180px] border-slate-200 focus:ring-primary resize-none" 
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className={`min-h-[180px] border-slate-200 focus:ring-primary resize-none ${errors.message ? 'border-red-500' : ''}`} 
+                    {...register("message")}
                   />
+                  {errors.message && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.message.message}</p>}
                 </div>
 
                 <div className="flex flex-col gap-4">
-                  <Button type="submit" className="bg-[#111827] hover:bg-slate-800 text-white font-bold px-10 h-14 rounded-lg shadow-lg">
-                    Submit Inquiry
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="bg-[#111827] hover:bg-slate-800 text-white font-bold px-10 h-14 rounded-lg shadow-lg flex items-center gap-2"
+                  >
+                    {isSubmitting && <Loader2 className="animate-spin" size={18} />}
+                    {isSubmitting ? "Sending..." : "Submit Inquiry"}
                   </Button>
                   
                   {isSubmitted && (
@@ -196,6 +219,17 @@ export default function ContactPage() {
                         Your message has been sent successfully! Our team will contact you soon.
                       </p>
                     </motion.div>
+                  )}
+
+                  {serverError && (
+                    <div className="p-4 bg-red-50 border border-red-100 rounded-lg">
+                      <p className="text-red-700 text-sm font-medium">
+                        {serverError}
+                      </p>
+                      <p className="text-red-600 text-[10px] mt-1">
+                        Try contacting us directly at <a href="mailto:contact@siotrust.org" className="underline font-bold">contact@siotrust.org</a>
+                      </p>
+                    </div>
                   )}
                 </div>
               </form>
