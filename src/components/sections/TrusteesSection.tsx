@@ -129,7 +129,7 @@ export default function TrusteesSection() {
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
-                    <div className="p-6 flex flex-col flex-grow text-left">
+                    <div className="p-6 flex flex-col flex-grow justify-center items-center text-center">
                       <h3 className="text-lg font-bold text-[#0a2540] leading-tight mb-2 min-h-[3.5rem] flex items-start">{trustee.name}</h3>
                       <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-4 min-h-[1.5rem] flex items-start">{trustee.role}</p>
                       <p className="text-sm text-slate-600 leading-relaxed">
