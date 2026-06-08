@@ -5,11 +5,20 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname?.startsWith(path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,27 +55,27 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
-                className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                className={`text-sm font-semibold transition-colors ${isActive('/') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Home
               </Link>
             </li>
             <li className="relative group flex items-center gap-1 cursor-pointer">
-              <span className="text-sm font-semibold text-white group-hover:text-primary transition-colors flex items-center">
+              <span className={`text-sm font-semibold transition-colors flex items-center ${isActive('/about') ? 'text-primary' : 'text-white group-hover:text-primary'}`}>
                 About <ChevronDown size={14} className="ml-1 mt-0.5" />
               </span>
               <div className="absolute top-full left-0 pt-4 hidden group-hover:block w-48">
                 <div className="bg-white rounded-lg shadow-lg py-2 flex flex-col">
-                  <Link href="/about/history" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our History</Link>
-                  <Link href="/about/trustees" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our Trustees</Link>
-                  <Link href="/about/team" className="px-4 py-2 text-sm text-slate-800 hover:bg-slate-50 hover:text-primary transition-colors">Our Team</Link>
+                  <Link href="/about/history" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/history' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our History</Link>
+                  <Link href="/about/trustees" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/trustees' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Trustees</Link>
+                  <Link href="/about/team" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/team' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Team</Link>
                 </div>
               </div>
             </li>
             <li>
               <Link
                 href="/patrons"
-                className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                className={`text-sm font-semibold transition-colors ${isActive('/patrons') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Patrons & Sponsors
               </Link>
@@ -74,7 +83,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/contact"
-                className="text-sm font-semibold text-white hover:text-primary transition-colors"
+                className={`text-sm font-semibold transition-colors ${isActive('/contact') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Contact
               </Link>
@@ -109,23 +118,23 @@ export default function Navbar() {
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <ul className="flex flex-col gap-4">
                 <li>
-                  <Link href="/" className="block text-base font-semibold text-white" onClick={() => setIsOpen(false)}>
+                  <Link href="/" className={`block text-base font-semibold ${isActive('/') ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>
                     Home
                   </Link>
                 </li>
                 <li className="flex flex-col gap-2">
-                  <span className="text-xs font-bold text-primary uppercase tracking-widest">About</span>
-                  <Link href="/about/history" className="block text-sm font-semibold text-white pl-2" onClick={() => setIsOpen(false)}>Our Journey</Link>
-                  <Link href="/about/trustees" className="block text-sm font-semibold text-white pl-2" onClick={() => setIsOpen(false)}>Board of Trustees</Link>
-                  <Link href="/about/team" className="block text-sm font-semibold text-white pl-2" onClick={() => setIsOpen(false)}>Executive Team</Link>
+                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">About</span>
+                  <Link href="/about/history" className={`block text-sm font-semibold pl-2 ${pathname === '/about/history' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Our Journey</Link>
+                  <Link href="/about/trustees" className={`block text-sm font-semibold pl-2 ${pathname === '/about/trustees' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Board of Trustees</Link>
+                  <Link href="/about/team" className={`block text-sm font-semibold pl-2 ${pathname === '/about/team' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Executive Team</Link>
                 </li>
                 <li>
-                  <Link href="/patrons" className="block text-base font-semibold text-white" onClick={() => setIsOpen(false)}>
+                  <Link href="/patrons" className={`block text-base font-semibold ${isActive('/patrons') ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>
                     Patrons & Sponsors
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="block text-base font-semibold text-white" onClick={() => setIsOpen(false)}>
+                  <Link href="/contact" className={`block text-base font-semibold ${isActive('/contact') ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>
                     Contact
                   </Link>
                 </li>

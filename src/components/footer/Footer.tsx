@@ -52,14 +52,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Key Features */}
           <div className="flex flex-col gap-6">
-            <h3 className="text-base font-bold text-white uppercase tracking-wider">Resources</h3>
+            <h3 className="text-base font-bold text-white uppercase tracking-wider">Key Features</h3>
             <ul className="flex flex-col gap-3">
-              <li><Link href="#" className="text-sm hover:text-white transition-colors">Volunteer Portal</Link></li>
-              <li><Link href="#" className="text-sm hover:text-white transition-colors">Annual Financial Reports</Link></li>
+              <li><Link href="/features/education-beyond-academics" className="text-sm hover:text-white transition-colors">Education Beyond Academics</Link></li>
+              <li><Link href="/features/rooted-in-values" className="text-sm hover:text-white transition-colors">Rooted in Values</Link></li>
+              <li><Link href="/features/student-growth" className="text-sm hover:text-white transition-colors">Student Growth</Link></li>
               <li><Link href="#" className="text-sm hover:text-white transition-colors">Impact Stories</Link></li>
-              <li><Link href="#" className="text-sm hover:text-white transition-colors">NGO Certifications (80G)</Link></li>
             </ul>
           </div>
 
