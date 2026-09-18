@@ -1,212 +1,134 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "framer-motion";
 
 export default function HistoryPage() {
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const narrativeRef = useRef<HTMLDivElement>(null);
-
   const timeline = [
-    {
-      year: "1955",
-      title: "Visionary Establishment",
-      text: "SIO was established with the vision of making quality, value-based education accessible to the community.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "1956",
-      title: "Humble Beginnings",
-      text: "Vani Vidyalaya began its journey in a modest tin-shed classroom with a small group of young learners.",
-      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "1965",
-      title: "First Permanent Home",
-      text: "The institution inaugurated its first permanent school building, marking a major milestone in its growth.",
-      image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "1975",
-      title: "Junior College Launch",
-      text: "Junior College sections in Science and Commerce streams were introduced, expanding our reach to higher education.",
-      image: "https://images.unsplash.com/photo-1523050335456-c694791b1d22?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "1984",
-      title: "Government Recognition",
-      text: "The institution was recognized by the Government of Maharashtra as the 'Best Managed School'.",
-      image: "https://images.unsplash.com/photo-1507537297325-592feef36272?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "1993",
-      title: "Digital Transition",
-      text: "Computer education was formally introduced, embracing modern learning and technology early on.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "2015",
-      title: "Diamond Jubilee",
-      text: "Our 60th anniversary celebrations were honored by the presence of Dr. A. P. J. Abdul Kalam.",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-      year: "2023",
-      title: "Modern Landmark",
-      text: "The newly redeveloped campus was inaugurated alongside the launch of Robotics & AI programs and state-of-the-art learning facilities.",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop",
-    }
+    { year: "1955", events: [
+      "SOUTH INDIAN ORGANISATION (SIO) was founded on 10th April 1955 with the primary objective of providing quality education to the South Indian community who have migrated to Mumbai."
+    ]},
+    { year: "1956", events: [
+      "SIO’s humble beginnings date back to the inception of its primary school, which started with 27 students in standards 1st and 2nd.",
+      "By 1961-1962 the institution expanded to include kindergarten and secondary sections experiencing a phenomenal growth to reach a staggering strength of 530 students."
+    ]},
+    { year: "1963", events: [
+      "Foundation stone was laid on 23.3.1963 for a permanent school building at the hands of late Chief Minister of Maharashtra MS Kannamwar and Vani lined up with other Educational giants in Greater Mumbai with IX Standard.",
+      "The strength was increased."
+    ]},
+    { year: "1965", events: [
+      "Vani Visionaries' Dream/ambition was fulfilled by opening the new own building by the then Governor of Maharashtra Late Dr.P V Cherian on 7th march,1965."
+    ]},
+    { year: "1966", events: [
+      "Our first batch of 25 students appeared for SSC examination under the dynamic control of Principal Smt. Lalita Sharma.",
+      "First decade of Noble service borne fruit at this moment."
+    ]},
+    { year: "1975", events: [
+      "Vani Vidyalaya proudly introduced Junior College with Science and Commerce streams expanding opportunities for students to explore their academic interest."
+    ]},
+    { year: "1980", events: [
+      "Vani Vidyalaya proudly celebrated its Silver Jubilee, marking 25 memorable years of academic excellence, growth and service to the community."
+    ]},
+    { year: "1983", events: [
+      "SIO MANAGEMENT entered into professional education by establishing SIO INSTITUTE OF MANAGEMENT STUDIES IN 1983 by starting 6 month computer profession Diploma courses."
+    ]},
+    { year: "1984", events: [
+      "Vani Vidyalaya has been honoured with a prestigious award by Government of Maharashtra for being the BEST MANAGED SCHOOL WITH A CLEAN ACADEMIC RECORD."
+    ]},
+    { year: "1986", events: [
+      "We performed the Bhoomi Pooja to mark the commencement of its new building extension project."
+    ]},
+    { year: "1987", events: [
+      "It was a momentous occasion for Vani Vidyalaya as Shri Shankaracharya of Sero Kanchi Kamokoti Peetam His Holiness Sri Jayendra Saraswathy Swamiji graced our institution and blessed our children for a successful and fulfilling career."
+    ]},
+    { year: "1993", events: [
+      "Vani Vidyalaya marked a significant milestone with the introduction of computer education, heralding the beginning of the computer age for its students."
+    ]},
+    { year: "1999", events: [
+      "Vani Vidyalaya Junior College was placed at 11th position among the total 182 Junior Colleges in Mumbai.",
+      "A great achievement by our Staff and students."
+    ]},
+    { year: "2005", events: [
+      "WE Celebrated Our Golden Jubilee Year. Many programmes were organised.",
+      "All former Presidents, MC members, and retired staff members were honoured by the management."
+    ]},
+    { year: "2010", events: [
+      "Pioneering education in Mulund! Vani Vidyalaya introduces digital smart classes."
+    ]},
+    { year: "2013", events: [
+      "\"The T Ward Science Exhibition was well conducted in our school with our students showcasing exceptional talent and securing numerous awards and prizes for their innovative projects.\""
+    ]},
+    { year: "2015", events: [
+      "Vani Vidyalaya's Diamond Jubilee celebrations in 2015 were truly a grand affair, marking a significant milestone in the institution's history. The year-long program was a testament to the school's growth and commitment to excellence.",
+      "The celebrations culminated in a special function at Kalidas Hall, where the former President of India Bharat Ratna. Dr.A.P. J. Abdul Kalam delivered a grand address.",
+      "This occasion not only showcased Vani Vidyalaya's achievements but also solidified its position as a landmark institution in Mulund.",
+      "Dr. Dolly Henry, Principal of Vani Vidalaya (2005-2021), was conferred with the prestigious National Best Teacher Award by the then President of India, Shri Pranab Mukherjee."
+    ]},
+    { year: "2020-21", events: [
+      "A Grand comeback to a newly constructed building which was carried out in two phases and completed with more class rooms and other amenities as planned.",
+      "A Great Achievement by SIO with the timely financial support and by the joint efforts of all well wishers."
+    ]},
+    { year: "2023", events: [
+      "Vani Vidyalaya's new redeveloped building was inaugurated on August 20, 2023, by Shri Manoj Kotak, Member of Parliament, Mulund, and Shri Sandeep Sangave, Deputy Director of Education.",
+      "This milestone marked a significant upgrade for the institution, which has been providing quality education since its establishment in 1955.",
+      "The school also conducted a district-level Science Exhibition, which received appreciation from the department for its diligent organization. Vani Vidyalaya has been actively promoting academic excellence and extracurricular activities, making it a reputable institution in the Mulund area.",
+      "Started Robotics & AI courses managed by Amazeheads, and establishing a sports turf for students, being coached by Leno sports."
+    ]},
+    { year: "2024", events: [
+      "Establishment of a full fledged IT laboratory by installing a server with power backup, 35 pcs which was fully sponsored by Kaushik KP Memorial Charitable Foundation."
+    ]}
   ];
 
-  useEffect(() => {
-    // Header Animation
-    gsap.from(headerRef.current, {
-      opacity: 0,
-      y: -30,
-      duration: 1,
-      ease: "power3.out"
-    });
-
-    // Narrative Animation
-    gsap.from(narrativeRef.current?.children || [], {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: narrativeRef.current,
-        start: "top 80%",
-      }
-    });
-
-    const items = gsap.utils.toArray(".timeline-item") as HTMLElement[];
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-      // Desktop Animations
-      items.forEach((item) => {
-        const year = item.querySelector(".timeline-year");
-        const content = item.querySelector(".timeline-content");
-        const image = item.querySelector(".timeline-image");
-        const dot = item.querySelector(".timeline-dot");
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: "top 88%",
-            toggleActions: "play none none reverse"
-          }
-        });
-
-        tl.from(dot, { scale: 0, duration: 0.8, ease: "back.out(1.2)", force3D: true })
-          .from(year, { opacity: 0, x: -40, duration: 0.7, ease: "power3.out", force3D: true }, "-=0.5")
-          .from(content, { opacity: 0, y: 30, duration: 0.7, ease: "power3.out", force3D: true }, "-=0.5")
-          .from(image, { opacity: 0, scale: 0.85, duration: 0.9, ease: "expo.out", force3D: true }, "-=0.6");
-      });
-
-      // Center Line Growth with smooth scrub
-      gsap.from(".center-line", {
-        scaleY: 0,
-        transformOrigin: "top center",
-        ease: "none",
-        scrollTrigger: {
-          trigger: timelineRef.current,
-          start: "top 75%",
-          end: "bottom 85%",
-          scrub: 1.2,
-        }
-      });
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      // Mobile Animations (Liquid Fade-in)
-      items.forEach((item) => {
-        gsap.from(item, {
-          opacity: 0,
-          y: 40,
-          duration: 1.2,
-          ease: "power2.out",
-          force3D: true,
-          scrollTrigger: {
-            trigger: item,
-            start: "top 92%",
-            toggleActions: "play none none none"
-          }
-        });
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
-
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-white">
-      <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
-        
+    <div className="pt-32 pb-24 min-h-screen bg-[#0a2540] text-white">
+      <div className="container mx-auto px-6 md:px-10 max-w-[1200px]">
         {/* Header */}
-        <div ref={headerRef} className="max-w-4xl mx-auto text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-[#0a2540] mb-6 italic tracking-tight">A Journey of Vision, Values & Generations</h1>
-          <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            There are some journeys that begin with buildings and some that begin with a belief.
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Our History</h1>
+          <p className="text-sm md:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            A legacy of excellence since 1955. Tracing our journey through the decades as we evolved into a premier educational institution.
           </p>
         </div>
 
-        {/* Narrative Section */}
-        <div ref={narrativeRef} className="max-w-4xl mx-auto mb-24 text-sm md:text-base text-slate-700 space-y-8 leading-relaxed">
-          <p>
-            In 1955, a small group of determined individuals from the South Indian community in Mumbai came together with a dream, that no child should be denied the opportunity to learn, grow, and build a better future because of limited means or circumstances. South Indians' Organisation was born from that dream.
-          </p>
-          <p>
-            What started in a humble tin-shed classroom with just a handful of students was built not on resources, but on hope, sacrifice, and the collective faith of a community that believed education could change generations. Over the years, those classrooms grew, dreams grew bigger, and so did the lives touched by the institution.
-          </p>
-          <p>
-            Today, Vani Vidyalaya stands as one of Mulund’s respected educational landmarks, nurturing nearly 3,600 students from pre-primary to junior college with the support of around 125 dedicated staff members. From a single classroom built on hope to a thriving institution shaping thousands of futures, its journey continues to inspire generations. 
-          </p>
-        </div>
+        {/* Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 rounded-full" />
 
-        {/* Timeline Section */}
-        <div ref={timelineRef} className="relative max-w-5xl mx-auto py-10">
-          {/* Center Line */}
-          <div className="center-line absolute left-1/2 top-0 w-1 bg-primary/30 -translate-x-1/2 hidden md:block h-full" />
-
-          {timeline.map((item, idx) => (
-            <div 
-              key={idx} 
-              className={`timeline-item relative flex flex-col md:flex-row items-center mb-32 last:mb-0 will-change-transform ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+          {timeline.map((item, index) => (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              key={item.year} 
+              className={`relative flex flex-col md:flex-row items-start md:items-center mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
-              {/* Year & Dot */}
-              <div className="timeline-dot absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-primary rounded-full z-10 border-4 border-white shadow-md hidden md:block will-change-transform" />
-              
-              <div className="w-full md:w-1/2 px-10 mb-8 md:mb-0 timeline-content will-change-opacity">
-                <div className={`flex flex-col ${idx % 2 === 0 ? "md:items-start" : "md:items-end text-right"}`}>
-                  <span className="timeline-year text-4xl font-bold text-primary mb-3 inline-block will-change-transform">{item.year}</span>
-                  <h3 className="text-xl font-bold text-[#0a2540] mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {item.text}
-                  </p>
+              {/* Center Dot */}
+              <div className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full bg-[#0a2540] border-[3px] border-primary flex items-center justify-center -translate-x-1/2 mt-[14px] md:mt-0 z-10 shadow-lg shadow-primary/20">
+              </div>
+
+              {/* Content Box */}
+              <div className={`ml-14 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} flex flex-col`}>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-white/10 transition-colors duration-300">
+                  <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-bold tracking-wider mb-4">
+                    {item.year}
+                  </span>
+                  {item.events.length === 1 ? (
+                    <p className="text-slate-200 leading-relaxed text-sm md:text-base">
+                      {item.events[0]}
+                    </p>
+                  ) : (
+                    <ul className="list-disc list-outside pl-4 space-y-2 text-slate-200 leading-relaxed text-sm md:text-base marker:text-primary/70">
+                      {item.events.map((point, idx) => (
+                        <li key={idx} className="pl-1">{point}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
-              
-              <div className="w-full md:w-1/2 px-10 timeline-image will-change-transform">
-                <div className="overflow-hidden rounded-2xl shadow-xl border-4 border-white group">
-                  <img 
-                    src={item.image} 
-                    alt={item.year} 
-                    className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </div>
   );

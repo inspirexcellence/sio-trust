@@ -218,6 +218,15 @@ export default function DonatePage() {
               </p>
               <p className="text-[10px] text-slate-400 uppercase tracking-widest">— SIO Trust Motto</p>
             </div>
+
+            {/* QR Code / Scan to Pay */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+              <h4 className="text-xl font-serif font-bold text-[#0a2540] mb-4">Scan to Pay</h4>
+              <div className="w-48 h-48 bg-slate-100 rounded-xl border-2 border-dashed border-slate-300 flex items-center justify-center mb-4">
+                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">QR Code Coming Soon</span>
+              </div>
+              <p className="text-xs text-slate-500">Scan this QR code using any UPI app to donate directly to SIO Trust.</p>
+            </div>
           </div>
 
           {/* Right Side: Donation Form */}

@@ -8,9 +8,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#111827] text-slate-400 pt-16 pb-8 border-t-4 border-primary relative">
       <div className="container mx-auto px-6 md:px-10 max-w-[1400px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand & About */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 group">
               <Image src="/sioLogo.png" alt="Logo" width={44} height={44} />
               <div className="flex flex-col">
@@ -59,7 +59,18 @@ export default function Footer() {
               <li><Link href="/features/education-beyond-academics" className="text-sm hover:text-white transition-colors">Education Beyond Academics</Link></li>
               <li><Link href="/features/rooted-in-values" className="text-sm hover:text-white transition-colors">Rooted in Values</Link></li>
               <li><Link href="/features/student-growth" className="text-sm hover:text-white transition-colors">Student Growth</Link></li>
-              <li><Link href="#" className="text-sm hover:text-white transition-colors">Impact Stories</Link></li>
+              <li><Link href="/impact-stories" className="text-sm hover:text-white transition-colors">Impact Stories</Link></li>
+            </ul>
+          </div>
+
+          {/* Initiatives */}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-base font-bold text-white uppercase tracking-wider">Initiatives</h3>
+            <ul className="flex flex-col gap-3">
+              <li><Link href="/facilities" className="text-sm hover:text-white transition-colors">Facilities</Link></li>
+              <li><Link href="/csr" className="text-sm hover:text-white transition-colors">CSR Initiatives</Link></li>
+              <li><Link href="/future-plans" className="text-sm hover:text-white transition-colors">Future Plans</Link></li>
+              <li><Link href="/events" className="text-sm hover:text-white transition-colors">Events</Link></li>
             </ul>
           </div>
 

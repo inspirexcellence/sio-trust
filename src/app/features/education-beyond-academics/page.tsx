@@ -68,6 +68,52 @@ export default function EducationBeyondAcademicsPage() {
           </ul>
         </div>
       </div>
+
+      {/* New Section: Fostering Inclusivity */}
+      <div className="w-full mt-24 bg-[#0a2540] py-24 relative overflow-hidden">
+        {/* Abstract background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div className="container mx-auto px-6 md:px-10 max-w-[1400px] relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
+              Fostering Inclusivity: Our Academic & Inclusive Partnership with Society for Koko Specials and Remedials (KOKO Kids)
+            </h2>
+            <p className="text-lg text-slate-300 leading-relaxed">
+              At Vani Vidyalaya, we believe that true education extends beyond academic excellence to encompass empathy, equity, and meaningful community outreach. As a core part of our commitment to social responsibility, we are proud to partner with the Society for Koko Specials and Remedials (KOKO Kids), a registered NGO, specializing in handling children with Intellectual Development Disorders! We host an integrated academic and developmental program on our campus for children enrolled with Society for Koko Specials and Remedials(KOKO Kids)!
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
+            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-sm hover:-translate-y-2 hover:bg-white/10 transition-all duration-300 flex flex-col gap-4 group">
+              <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
+                <CheckCircle2 className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-white text-center md:text-left">Academic Integration & Tailored Support</h3>
+              <p className="text-slate-300 leading-relaxed text-center md:text-left">
+                To foster a seamless blend of specialized care and inclusive learning, our campus provides a dedicated integration classroom for KOKO Kids students. Twice a week, these young learners step into our mainstream classrooms, sharing learning spaces and building strong peer connections. Our leadership team and teaching faculty actively support their educational journey by offering customized syllabus adaptations, tailored learning strategies, and dedicated guidance during exam preparation.
+              </p>
+            </div>
+            
+            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-sm hover:-translate-y-2 hover:bg-white/10 transition-all duration-300 flex flex-col gap-4 group">
+              <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
+                <CheckCircle2 className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-white text-center md:text-left">Holistic Growth & Co-Curricular Participation</h3>
+              <p className="text-slate-300 leading-relaxed text-center md:text-left">
+                Inclusivity at Vani Vidyalaya spans every aspect of school life. We share our sports infrastructure and physical education spaces to accommodate their occupational therapy needs and daily physical activities. Furthermore, KOKO Kids students are an integral part of our vibrant school culture, actively performing and competing alongside our students during annual sports days, cultural showcases, and dance events.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto text-center bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
+            <p className="text-lg text-white font-serif leading-relaxed">
+              Through this ongoing outreach initiative, Vani Vidyalaya remains dedicated to opening doors, breaking barriers, and building a compassionate, integrated environment where every child receives the encouragement and opportunity to excel academically and socially.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
