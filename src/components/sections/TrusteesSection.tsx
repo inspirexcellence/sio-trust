@@ -1,6 +1,6 @@
 "use client";
 
-
+import { User } from "lucide-react";
 
 export default function TrusteesSection() {
   const trustees = [
@@ -47,10 +47,10 @@ export default function TrusteesSection() {
       bio: "Providing valuable insights on organizational policy and contributing actively to the trust’s long-term developmental goals."
     },
     {
-      name: "Shri V. Vishwanathan",
+      name: "Shri G. Shankar",
       role: "MC Member",
-      image: "/trustees/V.Vishwanathan1.jpeg",
-      bio: "An active participant in our community outreach programs, deeply committed to upholding SIO's founding principles."
+      image: "",
+      bio: "Managing Committee Member, actively contributing to institutional governance and community outreach."
     },
     {
       name: "Shri. N.K.Naganathan",
@@ -122,12 +122,19 @@ export default function TrusteesSection() {
                 key={idx} 
                 className={`bg-white rounded-2xl md:rounded-3xl shadow-sm border border-slate-200/60 flex flex-col h-full overflow-hidden group hover:shadow-2xl hover:-translate-y-2 hover:border-primary/30 transition-all duration-500 ${centeringClasses}`}
               >
-                <div className="aspect-square relative overflow-hidden shrink-0 bg-slate-100">
-                  <img 
-                    src={trustee.image} 
-                    alt={trustee.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
+                <div className="aspect-square relative overflow-hidden shrink-0 bg-slate-100 flex items-center justify-center">
+                  {trustee.image ? (
+                    <img 
+                      src={trustee.image} 
+                      alt={trustee.name}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-400 p-4">
+                      <User className="w-16 h-16 opacity-40 mb-2" />
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Photo Awaited</span>
+                    </div>
+                  )}
                   {/* Subtle gradient overlay at the bottom of the image to blend it into the card */}
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>

@@ -22,6 +22,16 @@ export default function Navbar() {
     return pathname?.startsWith(path);
   };
 
+  const closeAllMenus = () => {
+    setIsDesktopAboutOpen(false);
+    setIsDesktopInitiativesOpen(false);
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    closeAllMenus();
+  }, [pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -38,7 +48,7 @@ export default function Navbar() {
     >
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group" onClick={closeAllMenus}>
           {/* Custom SVG for hand holding heart outline */}
           <Image src="/sioLogo.png" alt="Logo" width={40} height={40} />
           <div className="flex flex-col">
@@ -57,57 +67,55 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
+                onClick={closeAllMenus}
                 className={`text-sm font-semibold transition-colors ${isActive('/') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Home
               </Link>
             </li>
             <li 
-              className="relative group flex items-center gap-1 cursor-pointer outline-none" 
+              className="relative flex items-center gap-1 cursor-pointer outline-none" 
               tabIndex={0}
-              onClick={(e) => {
-                if ((e.target as HTMLElement).closest('a')) return;
-                setIsDesktopAboutOpen(!isDesktopAboutOpen);
-              }}
-              onBlur={() => setTimeout(() => setIsDesktopAboutOpen(false), 200)}
+              onMouseEnter={() => setIsDesktopAboutOpen(true)}
+              onMouseLeave={() => setIsDesktopAboutOpen(false)}
+              onClick={() => setIsDesktopAboutOpen(!isDesktopAboutOpen)}
             >
-              <span className={`text-sm font-semibold transition-colors flex items-center ${isActive('/about') || isDesktopAboutOpen ? 'text-primary' : 'text-white group-hover:text-primary'}`}>
-                About <ChevronDown size={14} className={`ml-1 mt-0.5 transition-transform ${isDesktopAboutOpen ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+              <span className={`text-sm font-semibold transition-colors flex items-center ${isActive('/about') || isDesktopAboutOpen ? 'text-primary' : 'text-white hover:text-primary'}`}>
+                About <ChevronDown size={14} className={`ml-1 mt-0.5 transition-transform ${isDesktopAboutOpen ? 'rotate-180' : ''}`} />
               </span>
-              <div className={`absolute top-full left-0 pt-4 w-48 ${isDesktopAboutOpen ? 'block' : 'hidden group-hover:block'}`}>
+              <div className={`absolute top-full left-0 pt-4 w-48 ${isDesktopAboutOpen ? 'block' : 'hidden'}`}>
                 <div className="bg-white rounded-lg shadow-lg py-2 flex flex-col">
-                  <Link href="/about/history" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/history' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our History</Link>
-                  <Link href="/about/mission-vision" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/mission-vision' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Mission & Vision</Link>
-                  <Link href="/about/president-message" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/president-message' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>President's Message</Link>
-                  <Link href="/about/trustees" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/trustees' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Trustees</Link>
-                  <Link href="/about/team" className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/team' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Team</Link>
+                  <Link href="/about/history" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/history' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our History</Link>
+                  <Link href="/about/mission-vision" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/mission-vision' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Mission & Vision</Link>
+                  <Link href="/about/president-message" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/president-message' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>President's Message</Link>
+                  <Link href="/about/trustees" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/trustees' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Trustees</Link>
+                  <Link href="/about/team" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/about/team' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Our Team</Link>
                 </div>
               </div>
             </li>
             <li 
-              className="relative group flex items-center gap-1 cursor-pointer outline-none" 
+              className="relative flex items-center gap-1 cursor-pointer outline-none" 
               tabIndex={0}
-              onClick={(e) => {
-                if ((e.target as HTMLElement).closest('a')) return;
-                setIsDesktopInitiativesOpen(!isDesktopInitiativesOpen);
-              }}
-              onBlur={() => setTimeout(() => setIsDesktopInitiativesOpen(false), 200)}
+              onMouseEnter={() => setIsDesktopInitiativesOpen(true)}
+              onMouseLeave={() => setIsDesktopInitiativesOpen(false)}
+              onClick={() => setIsDesktopInitiativesOpen(!isDesktopInitiativesOpen)}
             >
-              <span className={`text-sm font-semibold transition-colors flex items-center ${isActive('/initiatives') || isDesktopInitiativesOpen ? 'text-primary' : 'text-white group-hover:text-primary'}`}>
-                Initiatives <ChevronDown size={14} className={`ml-1 mt-0.5 transition-transform ${isDesktopInitiativesOpen ? 'rotate-180' : 'group-hover:rotate-180'}`} />
+              <span className={`text-sm font-semibold transition-colors flex items-center ${isActive('/initiatives') || isDesktopInitiativesOpen ? 'text-primary' : 'text-white hover:text-primary'}`}>
+                Initiatives <ChevronDown size={14} className={`ml-1 mt-0.5 transition-transform ${isDesktopInitiativesOpen ? 'rotate-180' : ''}`} />
               </span>
-              <div className={`absolute top-full left-0 pt-4 w-48 ${isDesktopInitiativesOpen ? 'block' : 'hidden group-hover:block'}`}>
+              <div className={`absolute top-full left-0 pt-4 w-56 ${isDesktopInitiativesOpen ? 'block' : 'hidden'}`}>
                 <div className="bg-white rounded-lg shadow-lg py-2 flex flex-col">
-                  <Link href="/facilities" className={`px-4 py-2 text-sm transition-colors ${pathname === '/facilities' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Facilities</Link>
-                  <Link href="/csr" className={`px-4 py-2 text-sm transition-colors ${pathname === '/csr' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>CSR</Link>
-                  <Link href="/impact-stories" className={`px-4 py-2 text-sm transition-colors ${pathname === '/impact-stories' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Impact Stories</Link>
-                  <Link href="/future-plans" className={`px-4 py-2 text-sm transition-colors ${pathname === '/future-plans' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Future Plans</Link>
+                  <Link href="/facilities" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/facilities' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Facilities</Link>
+                  <Link href="/csr" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/csr' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Community Initiatives</Link>
+                  <Link href="/impact-stories" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/impact-stories' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Fostering Inclusivity</Link>
+                  <Link href="/future-plans" onClick={(e) => { e.stopPropagation(); closeAllMenus(); }} className={`px-4 py-2 text-sm transition-colors ${pathname === '/future-plans' ? 'text-primary bg-slate-50 font-bold' : 'text-slate-800 hover:bg-slate-50 hover:text-primary'}`}>Future Plans</Link>
                 </div>
               </div>
             </li>
             <li>
               <Link
                 href="/patrons"
+                onClick={closeAllMenus}
                 className={`text-sm font-semibold transition-colors ${isActive('/patrons') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Patrons & Sponsors
@@ -116,13 +124,14 @@ export default function Navbar() {
             <li>
               <Link
                 href="/contact"
+                onClick={closeAllMenus}
                 className={`text-sm font-semibold transition-colors ${isActive('/contact') ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 Contact
               </Link>
             </li>
           </ul>
-          <Link href="/donate">
+          <Link href="/donate" onClick={closeAllMenus}>
             <Button className="bg-primary hover:bg-[#e5a924] text-[#0a2540] font-bold rounded-full px-6 h-10 text-sm">
               Donate
             </Button>
@@ -166,8 +175,8 @@ export default function Navbar() {
                 <li className="flex flex-col gap-2">
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Initiatives</span>
                   <Link href="/facilities" className={`block text-sm font-semibold pl-2 ${pathname === '/facilities' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Facilities</Link>
-                  <Link href="/csr" className={`block text-sm font-semibold pl-2 ${pathname === '/csr' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>CSR</Link>
-                  <Link href="/impact-stories" className={`block text-sm font-semibold pl-2 ${pathname === '/impact-stories' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Impact Stories</Link>
+                  <Link href="/csr" className={`block text-sm font-semibold pl-2 ${pathname === '/csr' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Community Initiatives</Link>
+                  <Link href="/impact-stories" className={`block text-sm font-semibold pl-2 ${pathname === '/impact-stories' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Fostering Inclusivity</Link>
                   <Link href="/future-plans" className={`block text-sm font-semibold pl-2 ${pathname === '/future-plans' ? 'text-primary' : 'text-white'}`} onClick={() => setIsOpen(false)}>Future Plans</Link>
                 </li>
                 <li>

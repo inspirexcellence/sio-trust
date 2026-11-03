@@ -35,8 +35,8 @@ export default function TeamPage() {
         </div>
 
         {/* Expert Advisory Panel */}
-        <div className="mb-32">
-          <div className="flex items-center justify-center gap-4 mb-16">
+        <div className="mb-24">
+          <div className="flex items-center justify-center gap-4 mb-12">
             <Shield className="w-8 h-8 text-primary" />
             <h2 className="text-3xl font-serif font-bold text-white">Expert Advisory Panel</h2>
           </div>
@@ -49,11 +49,8 @@ export default function TeamPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={idx} 
-                className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-colors duration-300 text-center flex flex-col items-center"
+                className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-colors duration-300 text-center flex flex-col items-center justify-center"
               >
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                  <User className="w-10 h-10 text-primary" />
-                </div>
                 <h3 className="text-xl font-bold text-white mb-2">{advisor.name}</h3>
                 <span className="inline-block px-3 py-1 bg-white/10 text-primary text-xs font-bold rounded-full mb-4">
                   {advisor.badge}
@@ -68,7 +65,7 @@ export default function TeamPage() {
 
         {/* Executive Team */}
         <div>
-          <div className="flex items-center justify-center gap-4 mb-16">
+          <div className="flex items-center justify-center gap-4 mb-12">
             <Users className="w-8 h-8 text-primary" />
             <h2 className="text-3xl font-serif font-bold text-white">Executive Team</h2>
           </div>
@@ -88,17 +85,12 @@ export default function TeamPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={idx}
-                className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 overflow-hidden group hover:bg-white/10 transition-colors duration-300"
+                className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8 text-center hover:bg-white/10 hover:border-primary/40 transition-all duration-300 flex flex-col items-center justify-center"
               >
-                <div className="aspect-[4/3] bg-white/5 flex items-center justify-center">
-                  <User className="w-16 h-16 text-white/20 group-hover:text-primary/40 transition-colors duration-300" />
-                </div>
-                <div className="p-8 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2">{exec.name}</h3>
-                  <span className="inline-block px-3 py-1 bg-white/10 text-primary text-xs font-bold rounded-full">
-                    {exec.role}
-                  </span>
-                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{exec.name}</h3>
+                <span className="inline-block px-4 py-1.5 bg-white/10 text-primary text-xs font-bold rounded-full">
+                  {exec.role}
+                </span>
               </motion.div>
             ))}
           </div>

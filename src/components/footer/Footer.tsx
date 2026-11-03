@@ -59,7 +59,7 @@ export default function Footer() {
               <li><Link href="/features/education-beyond-academics" className="text-sm hover:text-white transition-colors">Education Beyond Academics</Link></li>
               <li><Link href="/features/rooted-in-values" className="text-sm hover:text-white transition-colors">Rooted in Values</Link></li>
               <li><Link href="/features/student-growth" className="text-sm hover:text-white transition-colors">Student Growth</Link></li>
-              <li><Link href="/impact-stories" className="text-sm hover:text-white transition-colors">Impact Stories</Link></li>
+              <li><Link href="/impact-stories" className="text-sm hover:text-white transition-colors">Fostering Inclusivity</Link></li>
             </ul>
           </div>
 
@@ -68,9 +68,9 @@ export default function Footer() {
             <h3 className="text-base font-bold text-white uppercase tracking-wider">Initiatives</h3>
             <ul className="flex flex-col gap-3">
               <li><Link href="/facilities" className="text-sm hover:text-white transition-colors">Facilities</Link></li>
-              <li><Link href="/csr" className="text-sm hover:text-white transition-colors">CSR Initiatives</Link></li>
+              <li><Link href="/csr" className="text-sm hover:text-white transition-colors">Community Initiatives</Link></li>
+              <li><Link href="/impact-stories" className="text-sm hover:text-white transition-colors">Fostering Inclusivity</Link></li>
               <li><Link href="/future-plans" className="text-sm hover:text-white transition-colors">Future Plans</Link></li>
-              <li><Link href="/events" className="text-sm hover:text-white transition-colors">Events</Link></li>
             </ul>
           </div>
 

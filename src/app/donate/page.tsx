@@ -221,11 +221,15 @@ export default function DonatePage() {
 
             {/* QR Code / Scan to Pay */}
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-              <h4 className="text-xl font-serif font-bold text-[#0a2540] mb-4">Scan to Pay</h4>
-              <div className="w-48 h-48 bg-slate-100 rounded-xl border-2 border-dashed border-slate-300 flex items-center justify-center mb-4">
-                <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">QR Code Coming Soon</span>
+              <h4 className="text-xl font-serif font-bold text-[#0a2540] mb-4">Scan to Pay via UPI</h4>
+              <div className="w-64 max-w-full rounded-2xl border border-slate-200 overflow-hidden shadow-md mb-4 bg-white p-2">
+                <img 
+                  src="/sio-qr-code.jpg" 
+                  alt="Indian Bank QR Code - South Indian Organization" 
+                  className="w-full h-auto rounded-xl object-contain"
+                />
               </div>
-              <p className="text-xs text-slate-500">Scan this QR code using any UPI app to donate directly to SIO Trust.</p>
+              <p className="text-xs text-slate-500">Scan this Indian Bank QR code using any UPI app (GPay, PhonePe, Paytm, BHIM) to donate directly to SIO Trust.</p>
             </div>
           </div>
 
