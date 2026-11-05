@@ -8,17 +8,20 @@ export default function TeamPage() {
     {
       name: "Shri V. Chandrasekharan",
       badge: "HM - 593",
-      role: "Entrepreneur & Philanthropist"
+      role: "Entrepreneur & Philanthropist",
+      image: "/V.Chandrasekharan.jpeg"
     },
     {
       name: "Shri P.K. Krishnaprasad",
       badge: "LM - 508",
-      role: "Entrepreneur & Founder Of Kaushik KP Memorial Charitable Foundation"
+      role: "Entrepreneur & Founder Of Kaushik KP Memorial Charitable Foundation",
+      image: "/trustees/R.Krishna Prasad1.jpeg"
     },
     {
       name: "Shri Ramamoorthy Rajagopal",
       badge: "LM - 586",
-      role: "Financial Analyst & Philanthropist"
+      role: "Financial Analyst & Philanthropist",
+      image: "/Ramamoorthy Rajagopal.jpeg"
     }
   ];
 
@@ -49,8 +52,15 @@ export default function TeamPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={idx} 
-                className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-colors duration-300 text-center flex flex-col items-center justify-center"
+                className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-colors duration-300 text-center flex flex-col items-center justify-start group"
               >
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-primary/40 shadow-xl shrink-0 bg-white/10">
+                  <img 
+                    src={advisor.image} 
+                    alt={advisor.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <h3 className="text-xl font-bold text-white mb-2">{advisor.name}</h3>
                 <span className="inline-block px-3 py-1 bg-white/10 text-primary text-xs font-bold rounded-full mb-4">
                   {advisor.badge}
@@ -98,8 +108,13 @@ export default function TeamPage() {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-center bg-white/5 border border-white/10 rounded-2xl p-6 max-w-3xl mx-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 max-w-3xl mx-auto text-center sm:text-left"
           >
+            <img 
+              src="/trustees/G.Shankar.jpeg" 
+              alt="Shri G. Shankar" 
+              className="w-16 h-16 rounded-full object-cover border-2 border-primary/50 shrink-0 shadow-md" 
+            />
             <p className="text-slate-300 text-sm leading-relaxed">
               * Also in the list of our 13 MC members, Mr. G. Shankar has been inducted in the place of Mr. V. Vishwanathan who has resigned on health grounds.
             </p>

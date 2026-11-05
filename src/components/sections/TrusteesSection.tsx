@@ -1,8 +1,18 @@
 "use client";
 
-import { User } from "lucide-react";
+import { useState } from "react";
+import { User, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function TrusteesSection() {
+  const [expandedCards, setExpandedCards] = useState<Record<number, boolean>>({});
+
+  const toggleCard = (index: number) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const trustees = [
     {
       name: "Shri C.V.Srinivasan",
@@ -49,8 +59,8 @@ export default function TrusteesSection() {
     {
       name: "Shri G. Shankar",
       role: "MC Member",
-      image: "",
-      bio: "Managing Committee Member, actively contributing to institutional governance and community outreach."
+      image: "/trustees/G.Shankar.jpeg",
+      bio: "A seasoned Banker with Four decades of banking experience. Started his career in SBI and then moved to Dena Bank, Global Trust Bank and Axis Bank. Retired from Axis Bank after 30 years having worked in all major departments. He is also a past president of Rotary Club of Mulund Hill View. He loves reading, travelling and spends time in Social service."
     },
     {
       name: "Shri. N.K.Naganathan",
@@ -145,9 +155,23 @@ export default function TrusteesSection() {
                       {trustee.role}
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-slate-500 leading-snug md:leading-relaxed">
+                  <p className={`text-xs md:text-sm text-slate-500 leading-snug md:leading-relaxed ${expandedCards[idx] ? "" : "line-clamp-4"}`}>
                     {trustee.bio}
                   </p>
+                  {trustee.bio.length > 140 && (
+                    <button
+                      type="button"
+                      onClick={() => toggleCard(idx)}
+                      className="mt-3 inline-flex items-center justify-center gap-1 text-[11px] md:text-xs font-semibold text-primary hover:text-primary/80 transition-colors cursor-pointer mx-auto"
+                    >
+                      <span>{expandedCards[idx] ? "View Less" : "View More"}</span>
+                      {expandedCards[idx] ? (
+                        <ChevronUp className="w-3.5 h-3.5" />
+                      ) : (
+                        <ChevronDown className="w-3.5 h-3.5" />
+                      )}
+                    </button>
+                  )}
                 </div>
               </div>
             )})}
