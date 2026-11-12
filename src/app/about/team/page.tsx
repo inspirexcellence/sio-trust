@@ -15,7 +15,7 @@ export default function TeamPage() {
       name: "Shri P.K. Krishnaprasad",
       badge: "LM - 508",
       role: "Entrepreneur & Founder Of Kaushik KP Memorial Charitable Foundation",
-      image: "/trustees/R.Krishna Prasad1.jpeg"
+      image: "/pk-krishnaprasad.jpeg"
     },
     {
       name: "Shri Ramamoorthy Rajagopal",
@@ -55,11 +55,17 @@ export default function TeamPage() {
                 className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-colors duration-300 text-center flex flex-col items-center justify-start group"
               >
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-primary/40 shadow-xl shrink-0 bg-white/10">
-                  <img 
-                    src={advisor.image} 
-                    alt={advisor.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {advisor.image ? (
+                    <img 
+                      src={advisor.image} 
+                      alt={advisor.name}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-primary/10" aria-label={advisor.name}>
+                      <User className="w-12 h-12 text-primary/70" />
+                    </div>
+                  )}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{advisor.name}</h3>
                 <span className="inline-block px-3 py-1 bg-white/10 text-primary text-xs font-bold rounded-full mb-4">
