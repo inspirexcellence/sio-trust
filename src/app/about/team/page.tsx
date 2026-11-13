@@ -104,16 +104,6 @@ export default function TeamPage() {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center bg-white/5 border border-white/10 rounded-2xl p-6 max-w-3xl mx-auto"
-          >
-            <p className="text-slate-300 text-sm leading-relaxed">
-              * Also in the list of our 13 MC members, Mr. G. Shankar has been inducted in the place of Mr. V. Vishwanathan who has resigned on health grounds.
-            </p>
-          </motion.div>
         </div>
 
       </div>
