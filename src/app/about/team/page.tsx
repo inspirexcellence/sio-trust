@@ -7,19 +7,16 @@ export default function TeamPage() {
   const advisors = [
     {
       name: "Shri V. Chandrasekharan",
-      badge: "HM - 593",
       role: "Entrepreneur & Philanthropist",
       image: "/V.Chandrasekharan.jpeg"
     },
     {
       name: "Shri P.K. Krishnaprasad",
-      badge: "LM - 508",
       role: "Entrepreneur & Founder Of Kaushik KP Memorial Charitable Foundation",
       image: "/pk-krishnaprasad.jpeg"
     },
     {
       name: "Shri Ramamoorthy Rajagopal",
-      badge: "LM - 586",
       role: "Financial Analyst & Philanthropist",
       image: "/Ramamoorthy Rajagopal.jpeg"
     }
@@ -67,10 +64,7 @@ export default function TeamPage() {
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{advisor.name}</h3>
-                <span className="inline-block px-3 py-1 bg-white/10 text-primary text-xs font-bold rounded-full mb-4">
-                  {advisor.badge}
-                </span>
+                <h3 className="text-xl font-bold text-white mb-3">{advisor.name}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed">
                   {advisor.role}
                 </p>
