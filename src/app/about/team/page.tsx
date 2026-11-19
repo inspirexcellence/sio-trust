@@ -12,7 +12,7 @@ export default function TeamPage() {
     },
     {
       name: "Shri P.K. Krishnaprasad",
-      role: "Entrepreneur & Founder Of Kaushik KP Memorial Charitable Foundation",
+      role: "Acute Finance Professional, Founder and MD at Symphony Tech And Consultancy Solutions Pvt Ltd, Co-founder at GetSet Labs, Philanthropist",
       image: "/pk-krishnaprasad.jpeg"
     },
     {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Heart, ShieldCheck, Zap, Globe, Loader2 } from "lucide-react";
+import { Heart, ShieldCheck, Zap, Globe, Loader2, FileText, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,6 +33,69 @@ export default function DonatePage() {
   });
 
   const presets = ["500", "1000", "5000", "10000"];
+
+  const certificates = [
+    {
+      title: "CSR Approval Letter",
+      fileName: "CSR Approval Letter.pdf",
+      href: "/certificates/CSR%20Approval%20Letter.pdf",
+      size: "74 KB",
+    },
+    {
+      title: "80G Certificate",
+      fileName: "80G certificate.pdf",
+      href: "/certificates/80G%20certificate.pdf",
+      size: "201 KB",
+    },
+    {
+      title: "Certificate of Registration (BPT Act)",
+      fileName: "Cert.of Regn. BPT Act.pdf",
+      href: "/certificates/Cert.of%20Regn.%20BPT%20Act.pdf",
+      size: "891 KB",
+    },
+    {
+      title: "Certificate of Registration (Societies Act)",
+      fileName: "Cert.of Regn.Soc.Act.pdf",
+      href: "/certificates/Cert.of%20Regn.Soc.Act.pdf",
+      size: "356 KB",
+    },
+    {
+      title: "SIO PAN Card",
+      fileName: "SIO PAN Card.pdf",
+      href: "/certificates/SIO%20PAN%20Card.pdf",
+      size: "158 KB",
+    },
+    {
+      title: "Form 10AC",
+      fileName: "FORM 10 AC.pdf",
+      href: "/certificates/FORM%2010%20AC.pdf",
+      size: "2.5 MB",
+    },
+    {
+      title: "12AB Registration Order (Form 10AD)",
+      fileName: "70000000146251609_187065911_2025_EXM_AAATT3708L_Form 10AB Approval Order_1088045500(1)_28032026 (1).pdf",
+      href: "/certificates/70000000146251609_187065911_2025_EXM_AAATT3708L_Form%2010AB%20Approval%20Order_1088045500(1)_28032026%20(1).pdf",
+      size: "207 KB",
+    },
+    {
+      title: "80G Approval Order (Form 10AD)",
+      fileName: "70000000146251675_187065987_2025_EXM_AAATT3708L_Form 10AB Approval Order_1088045534(1)_28032026 (1).pdf",
+      href: "/certificates/70000000146251675_187065987_2025_EXM_AAATT3708L_Form%2010AB%20Approval%20Order_1088045534(1)_28032026%20(1).pdf",
+      size: "201 KB",
+    },
+    {
+      title: "SIO Trust Initiatives",
+      fileName: "SIOtrust Initiatives.pdf",
+      href: "/certificates/SIOtrust%20Initiatives.pdf",
+      size: "422 KB",
+    },
+    {
+      title: "Community Initiatives",
+      fileName: "community Initiatives.pdf",
+      href: "/certificates/community%20Initiatives.pdf",
+      size: "480 KB",
+    },
+  ];
 
   useEffect(() => {
     // Load Razorpay Script
@@ -359,6 +422,53 @@ export default function DonatePage() {
           </div>
 
         </div>
+
+        {/* Downloadable Trust Certificates */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-6xl mx-auto mt-12 bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100"
+        >
+          <div className="mb-8">
+            <h2 className="text-2xl font-serif font-bold text-[#0a2540] mb-2 italic">
+              Trust Certificates &amp; Statutory Documents
+            </h2>
+            <p className="text-sm text-slate-500">
+              Download our official registration, tax-exemption (80G / Form 10AC), PAN, and CSR approval documents.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {certificates.map((cert) => (
+              <a
+                key={cert.fileName}
+                href={cert.href}
+                download={cert.fileName}
+                className="group flex items-center justify-between gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-primary/60 hover:shadow-md transition-all h-full"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-[#0a2540] text-sm leading-snug group-hover:text-primary transition-colors">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      PDF • {cert.size}
+                    </p>
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-[#0a2540] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors shrink-0">
+                  <Download className="w-3.5 h-3.5" />
+                  Download
+                </span>
+              </a>
+            ))}
+          </div>
+        </motion.section>
       </div>
 
     </div>
