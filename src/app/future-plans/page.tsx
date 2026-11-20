@@ -221,6 +221,15 @@ export default function FuturePlansPage() {
               Other Special Initiatives Envisioned
             </h2>
 
+            <div className="space-y-2">
+              <h3 className="font-bold text-[#0a2540] text-lg md:text-xl">
+                Unified K-to-Graduation Ecosystem
+              </h3>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                Traditionally, students face a fragmented transition after Class 10 and Class 12—navigating unfamiliar institutions, disconnected teaching styles, and last-minute career confusion. By integrating Undergraduate Degree Programs (BA, B.Com, B.Sc) alongside our established Pre-Primary, Secondary, and Junior College wings, Vani Vidyalaya proposes to have an uninterrupted, mentored pathway.
+              </p>
+            </div>
+
             <div className="space-y-6">
               <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 md:p-8 space-y-4">
                 <h3 className="font-bold text-[#0a2540] text-lg md:text-xl">

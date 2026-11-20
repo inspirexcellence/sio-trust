@@ -6,9 +6,12 @@ export default function FosteringInclusivityPage() {
       {/* Hero Section */}
       <section className="py-20 bg-[#0a2540] text-white text-center">
         <div className="container mx-auto px-6 relative z-10 max-w-4xl">
-          <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-tight leading-tight">
-            Fostering Inclusivity: Our Academic & Inclusive Partnership with Society for Koko Specials and Remedials (KOKO Kids)
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6 tracking-tight">
+            Fostering Inclusivity
           </h1>
+          <p className="text-primary font-bold tracking-wide text-base md:text-lg">
+            Our Academic &amp; Inclusive Partnership with Society for Koko Specials and Remedials (KOKO Kids)
+          </p>
         </div>
       </section>
 
