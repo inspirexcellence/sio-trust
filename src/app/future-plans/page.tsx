@@ -215,6 +215,79 @@ export default function FuturePlansPage() {
             </div>
           </div>
 
+          {/* Other Special Initiatives Envisioned */}
+          <div className="border-t border-slate-100 pt-10 space-y-8">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2540]">
+              Other Special Initiatives Envisioned
+            </h2>
+
+            <div className="space-y-6">
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 md:p-8 space-y-4">
+                <h3 className="font-bold text-[#0a2540] text-lg md:text-xl">
+                  Management Courses (Full-Time &amp; Part-Time)
+                </h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  Recognizing the growing demand for leadership, entrepreneurship, and business acumen, SIO Trust plans to introduce specialized <strong className="text-slate-800">Management Programs</strong> tailored for diverse learners.
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">Full-Time Track:</strong> Intensive programs structured for recent graduates aiming to build corporate and entrepreneurial careers.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Part-Time Track:</strong> Flexible schedules crafted for working professionals seeking upward mobility, skill upgradation, and leadership roles without interrupting their careers.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 md:p-8 space-y-4">
+                <h3 className="font-bold text-[#0a2540] text-lg md:text-xl">
+                  Hybrid Knowledge Hub: Digital &amp; Physical Library
+                </h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  To support our expanding academic and management curricula, we are upgrading our learning resources into a modern <strong className="text-slate-800">Hybrid Library System</strong> that bridges traditional scholarship with digital innovation.
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">Physical Collection:</strong> Expanded textbook banks, reference volumes, journals, and quiet reading spaces tailored to university and management syllabi.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Digital Library:</strong> High-speed access to e-books, academic databases, research journals, and digital learning portals—empowering students and faculty with 24/7 academic resources.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 md:p-8 space-y-4">
+                <h3 className="font-bold text-[#0a2540] text-lg md:text-xl">
+                  Modernization of the Assembly Hall &amp; Auditorium (Ground Floor)
+                </h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  Our ground-floor Assembly Hall and Auditorium have long served as the vibrant heart of campus gatherings, cultural programs, and community events. To support academic conferences, seminars, and large-scale student activities, this space will undergo comprehensive modernization:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 text-slate-600 text-sm md:text-base leading-relaxed">
+                  <li>
+                    <strong className="text-slate-800">Upgraded Acoustics &amp; Audio-Visuals:</strong> State-of-the-art sound systems, projection technology, and stage lighting.
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Enhanced Comfort &amp; Accessibility:</strong> Modernized seating, climate control, and improved spatial functionality to host inter-collegiate events, guest lectures, and cultural showcases.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Partner With Us: Support Our Vision */}
+          <div className="bg-[#0a2540] text-white rounded-2xl p-8 md:p-10 space-y-4">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold">
+              Partner With Us: Support Our Vision
+            </h2>
+            <p className="text-slate-200 text-sm md:text-base leading-relaxed">
+              Transforming these strategic initiatives into reality requires substantial capital investment in academic infrastructure, technology, faculty development, and student resources. As a non-profit charitable trust committed to transparent governance and affordable education, we invite <strong className="text-white">philanthropists, alumni, corporate CSR partners, and community well-wishers</strong> to join hands with us.
+            </p>
+            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              Your financial support and resource partnerships will directly empower thousands of young minds to learn, innovate, and lead with purpose.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

@@ -1,6 +1,10 @@
-import { BookOpen, Coffee, Activity, HandHeart, Church } from "lucide-react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { BookOpen, Coffee, Activity, HandHeart, Church, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function CommunityInitiativesPage() {
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const initiatives = [
     {
       icon: <BookOpen className="w-6 h-6 text-primary" />,
@@ -29,6 +33,52 @@ export default function CommunityInitiativesPage() {
     }
   ];
 
+  const holyVisitPhotos = [
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.15.jpeg",
+      alt: "Welcome banner at SIO's Vani Vidyalaya for the Holy Visit on April 10, 2026"
+    },
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.17.jpeg",
+      alt: "Committee members and priests welcoming His Holiness with Poorna Kumbham"
+    },
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.17%20(1).jpeg",
+      alt: "Arrival of His Holiness Jagatguru Sankara Vijayendra Saraswathy Swamigal"
+    },
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.15%20(1).jpeg",
+      alt: "Ceremonial floral welcome and aarti for His Holiness at Vani Vidyalaya"
+    },
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.16.jpeg",
+      alt: "His Holiness offering prayers at the decorated shrine"
+    },
+    {
+      src: "/pics/WhatsApp%20Image%202026-11-20%20at%2012.07.18.jpeg",
+      alt: "Devotees receiving darshan and blessings during the Holy Visit"
+    }
+  ];
+
+  useEffect(() => {
+    if (selectedPhotoIndex === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedPhotoIndex(null);
+      } else if (e.key === "ArrowLeft") {
+        setSelectedPhotoIndex((prev) =>
+          prev === null ? null : (prev - 1 + holyVisitPhotos.length) % holyVisitPhotos.length
+        );
+      } else if (e.key === "ArrowRight") {
+        setSelectedPhotoIndex((prev) =>
+          prev === null ? null : (prev + 1) % holyVisitPhotos.length
+        );
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedPhotoIndex, holyVisitPhotos.length]);
+
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       {/* Header */}
@@ -38,7 +88,7 @@ export default function CommunityInitiativesPage() {
             Community Initiatives
           </h1>
           <p className="text-primary font-bold tracking-wide text-base md:text-lg">
-            Celebrating Community, Compassion, and Fellowship-- Reconnecting Hearts in Our Platinum Jubilee Year
+            Celebrating Community, Compassion, and Fellowship - Reconnecting Hearts in Our Platinum Jubilee Year
           </p>
         </div>
       </section>
@@ -80,6 +130,45 @@ export default function CommunityInitiativesPage() {
             </div>
           </div>
 
+          {/* Holy Visit */}
+          <div className="border-t border-slate-100 pt-10 space-y-6">
+            <div>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-2">
+                10th April 2026
+              </span>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2540]">
+                HOLY VISIT
+              </h2>
+            </div>
+
+            <p className="text-slate-700 leading-relaxed text-base md:text-lg">
+              The residents of Mulund and the students &amp; staff of Vani Vidyalaya, were fortunate to have the darshan and Blessings of{" "}
+              <strong className="text-[#0a2540]">
+                His Holiness JAGATGURU SANKARA VIJAYENDRA SARASWATHY SWAMIGAL OF KANCHI KAMAKOTI PEETHAM
+              </strong>{" "}
+              when He visited Vani Vidyalaya on 10th April 2026. His visit was hosted jointly by The South Indians&apos; Organisation and The Mulund Bhajana Samaj. He was in the school for more than 4 hours as against His schedule of 2 hours. Contrary to the general expectation of 700-800 devotees, about 2,500 devotees turned out and had the benefit of His darshan and Prasadam. He expressed happiness over the arrangements and the discipline of the Mulund residents. He recalled the visit of a few members of the Managing Committee of SIO to Kancheepuram, to seek his blessings during the redevelopment of the school building that commenced in 2016.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              {holyVisitPhotos.map((photo, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setSelectedPhotoIndex(idx)}
+                  aria-label={`View larger image: ${photo.alt}`}
+                  className="relative aspect-[3/2] w-full rounded-2xl overflow-hidden border border-slate-200/80 shadow-md bg-slate-100 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* A Grand Revival for the Platinum Jubilee */}
           <div className="border-t border-slate-100 pt-10 bg-gradient-to-br from-slate-50 to-primary/5 p-8 md:p-10 rounded-3xl border border-primary/20">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a2540] mb-6">
@@ -100,6 +189,66 @@ export default function CommunityInitiativesPage() {
 
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedPhotoIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setSelectedPhotoIndex(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo preview"
+        >
+          <button
+            type="button"
+            onClick={() => setSelectedPhotoIndex(null)}
+            aria-label="Close preview"
+            className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors cursor-pointer"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedPhotoIndex(
+                (selectedPhotoIndex - 1 + holyVisitPhotos.length) % holyVisitPhotos.length
+              );
+            }}
+            aria-label="Previous photo"
+            className="absolute left-3 md:left-6 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors cursor-pointer"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <div
+            className="max-w-5xl w-full flex flex-col items-center gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={holyVisitPhotos[selectedPhotoIndex].src}
+              alt={holyVisitPhotos[selectedPhotoIndex].alt}
+              className="max-h-[82vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain"
+            />
+            <p className="text-slate-300 text-xs md:text-sm text-center">
+              {selectedPhotoIndex + 1} / {holyVisitPhotos.length} — {holyVisitPhotos[selectedPhotoIndex].alt}
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedPhotoIndex((selectedPhotoIndex + 1) % holyVisitPhotos.length);
+            }}
+            aria-label="Next photo"
+            className="absolute right-3 md:right-6 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors cursor-pointer"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

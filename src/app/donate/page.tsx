@@ -83,18 +83,6 @@ export default function DonatePage() {
       href: "/certificates/70000000146251675_187065987_2025_EXM_AAATT3708L_Form%2010AB%20Approval%20Order_1088045534(1)_28032026%20(1).pdf",
       size: "201 KB",
     },
-    {
-      title: "SIO Trust Initiatives",
-      fileName: "SIOtrust Initiatives.pdf",
-      href: "/certificates/SIOtrust%20Initiatives.pdf",
-      size: "422 KB",
-    },
-    {
-      title: "Community Initiatives",
-      fileName: "community Initiatives.pdf",
-      href: "/certificates/community%20Initiatives.pdf",
-      size: "480 KB",
-    },
   ];
 
   useEffect(() => {
